@@ -1,4 +1,3 @@
-# burro-esforcado-em-busca-da-sabedoria-personalidades
 # 🫏 Mapa do Autoconhecimento
 ### Canal Burro Esforçado — Em Busca da Sabedoria
 
@@ -87,8 +86,8 @@ em um grande salto, mas em cada pequeno passo dado com intenção.
 ## 📺 Canal no YouTube
 
 Inscreva-se e acompanhe a jornada:
-**[Canal Burro Esforçado](https://www.youtube.com/@BurrinhoEsforcado)**
-** https://www.youtube.com/@BurrinhoEsforcado
+**[Canal Burro Esforçado](https://youtube.com/@burrinho-esforcado)**
+
 ---
 
 *Feito com constância e humildade.* 🫏
