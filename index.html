@@ -279,12 +279,12 @@ function showRes(){
 }
 function shareWA(){
   if(!rc)return;var p=P[rc];
-  var t="Descobri minha personalidade no Canal Burro Esforcado! Tipo: "+rc+" - "+p.nm+". "+p.wi+" #BurroEsforcado #"+rc;
+  var t="Descobri minha personalidade no Canal Burro Esforcado! Tipo: "+rc+" - "+p.nm+". "+p.wi+" Faca o teste: https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/ #BurroEsforcado #"+rc;
   window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
 }
 function copyR(){
   if(!rc)return;var p=P[rc];
-  var t="Canal Burro Esforcado - Tipo: "+rc+" - "+p.nm+". "+p.wi+" #BurroEsforcado #"+rc;
+  var t="Canal Burro Esforcado - Tipo: "+rc+" - "+p.nm+". "+p.wi+" Faca o teste: https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/ #BurroEsforcado #"+rc;
   if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){toast("Copiado!");});}
   else{var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0;top:0;left:0";document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand("copy");toast("Copiado!");}catch(e){}document.body.removeChild(ta);}
 }
