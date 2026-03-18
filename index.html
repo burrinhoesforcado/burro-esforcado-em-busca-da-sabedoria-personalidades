@@ -22,6 +22,9 @@ h1 em{font-style:italic;color:#E8CC60}
 button{display:block;width:100%;font-family:sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#050505;background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);border:none;border-radius:13px;padding:16px 20px;cursor:pointer;-webkit-appearance:none}
 button:active{opacity:.8}
 button[disabled]{opacity:.3}
+#NB{transition:all .3s}
+#NB:not([disabled]){background:linear-gradient(135deg,#1A9080,#2ABCAA,#4ADCCA);color:#030a09;animation:pulse .8s ease-in-out 1}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
 .ghost{background:none;color:#A0B0C0;border:1px solid rgba(200,168,75,.2);margin-top:10px}
 .ghost:active{background:rgba(200,168,75,.08)}
 .sticky{position:sticky;top:0;background:rgba(5,5,16,.97);padding:10px 16px 8px;border-bottom:1px solid rgba(200,168,75,.1);z-index:10}
@@ -134,7 +137,7 @@ button[disabled]{opacity:.3}
   </div>
   <div class="qw" id="QB"></div>
   <div class="qbot">
-    <button id="NB" disabled>Proxima</button>
+    <button id="NB" disabled>Proxima Pergunta  &#8594;</button>
   </div>
 </div>
 
@@ -170,10 +173,30 @@ button[disabled]{opacity:.3}
 
 <script>
 var Q=[
-  {id:"EI",b:"E/I",ax:"Eixo 1 - Energia",q:"Como voce recarrega energia apos um dia intenso?",a:{s:"E",t:"A - Extrovertido",ti:"Extrovertido",d:"Fico renovado interagindo com pessoas. O exterior me reabastece."},b:{s:"I",t:"B - Introvertido",ti:"Introvertido",d:"Fico renovado sozinho ou em silencio. O interior me reabastece."}},
-  {id:"SN",b:"S/N",ax:"Eixo 2 - Percepcao",q:"O que mais te atrai ao aprender algo novo?",a:{s:"S",t:"A - Observador",ti:"Observador",d:"Os fatos concretos e como aplicar isso hoje na minha vida."},b:{s:"N",t:"B - Intuitivo",ti:"Intuitivo",d:"Os padroes ocultos e o que aquilo pode se tornar no futuro."}},
-  {id:"TF",b:"T/F",ax:"Eixo 3 - Decisao",q:"O que mais pesa numa decisao que afeta outras pessoas?",a:{s:"T",t:"A - Racional",ti:"Racional",d:"A logica e o que e mais justo e eficiente."},b:{s:"F",t:"B - Sentimental",ti:"Sentimental",d:"Os valores e como cada pessoa sera afetada."}},
-  {id:"JP",b:"J/P",ax:"Eixo 4 - Estilo",q:"Como voce prefere lidar com sua agenda e projetos?",a:{s:"J",t:"A - Planejador",ti:"Planejador",d:"Gosto de estrutura e planos claros. A organizacao me liberta."},b:{s:"P",t:"B - Adaptavel",ti:"Adaptavel",d:"Prefiro flexibilidade e ajustar no caminho."}}
+  {id:"EI",b:"E / I",ax:"Eixo 1 — Energia",
+   q:"Apos um dia longo e intenso, o que mais te recupera e te devolve energia?",
+   a:{s:"E",t:"Opcao A — Extrovertido",ti:"Extrovertido (E)",
+      d:"Preciso de pessoas ao redor. Sair, conversar, estar em grupo me recarrega. O silencio e o isolamento me pesam — o mundo exterior e minha fonte de energia."},
+   b:{s:"I",t:"Opcao B — Introvertido",ti:"Introvertido (I)",
+      d:"Preciso de silencio e solidao. Um tempo so comigo — lendo, pensando, descansando longe de estimulos — e o que realmente me restaura. Pessoas em excesso me esgotam."}},
+  {id:"SN",b:"S / N",ax:"Eixo 2 — Percepcao",
+   q:"Quando voce aprende algo novo, o que mais captura sua atencao e te motiva?",
+   a:{s:"S",t:"Opcao A — Observador",ti:"Observador (S)",
+      d:"O que e concreto, pratico e verificavel. Quero saber como funciona na realidade, exemplos reais, passos claros. Prefiro o que posso ver, tocar e aplicar agora."},
+   b:{s:"N",t:"Opcao B — Intuitivo",ti:"Intuitivo (N)",
+      d:"Os padroes escondidos, as conexoes entre ideias e as possibilidades futuras. Gosto de pensar no que aquilo pode se tornar, no significado mais profundo por tras dos fatos."}},
+  {id:"TF",b:"T / F",ax:"Eixo 3 — Decisao",
+   q:"Numa decisao dificil que afeta outras pessoas, o que voce prioriza naturalmente?",
+   a:{s:"T",t:"Opcao A — Racional",ti:"Racional (T)",
+      d:"A logica, a coerencia e o que e mais justo e eficiente — mesmo que a decisao seja dura ou impopular. Acredito que ser honesto e direto e mais respeitoso do que poupar sentimentos."},
+   b:{s:"F",t:"Opcao B — Sentimental",ti:"Sentimental (F)",
+      d:"Os valores, o impacto humano e como cada pessoa envolvida vai se sentir. Para mim, uma decisao que magoa desnecessariamente nao pode ser a certa — harmonia e autenticidade importam."}},
+  {id:"JP",b:"J / P",ax:"Eixo 4 — Estilo de Vida",
+   q:"Como voce se sente mais confortavel para lidar com sua rotina e seus projetos?",
+   a:{s:"J",t:"Opcao A — Planejador",ti:"Planejador (J)",
+      d:"Com planos definidos, prazos claros e uma estrutura organizada. Saber o que vem a seguir me da seguranca e liberdade mental. Imprevistos e bagunca me causam desconforto."},
+   b:{s:"P",t:"Opcao B — Adaptavel",ti:"Adaptavel (P)",
+      d:"Com flexibilidade e abertura para o que surgir. Prefiro manter as opcoes em aberto e me adaptar ao momento. Regras rigidas e cronogramas fechados me sufocam e travam minha criatividade."}}
 ];
 var P={
   INTJ:{nm:"O Arquiteto",g:"NT",gn:"Analistas",ds:"Estrategista visionario e independente. Combina imaginacao com determinacao implacavel.",wi:"Sua sabedoria nasce na reflexao profunda. Aprenda a confiar nas pessoas.",st:["Pensamento estrategico","Alta determinacao","Mente analitica"],sh:["Excessivamente critico","Tendencia ao isolamento","Dificuldade com emocoes"]},
@@ -209,7 +232,7 @@ function startQ(){
   ans=[null,null,null,null];cur=0;rc="";
   for(var i=0;i<4;i++){var d=document.getElementById("D"+i);if(d){d.className="dot";d.innerHTML=Q[i].id;}}
   document.getElementById("NB").disabled=true;
-  document.getElementById("NB").innerHTML="Proxima";
+  document.getElementById("NB").innerHTML="Proxima Pergunta  \u2192";
   document.getElementById("PF").style.width="0%";
   document.getElementById("PT").innerHTML="";
   drawQ(0);pg(1);
@@ -244,7 +267,6 @@ function pick(i,s){
   var nb=document.getElementById("NB");
   if(nb){nb.disabled=false;nb.innerHTML=i<3?"Proxima":"Ver Resultado";}
   upd(i);
-  setTimeout(function(){if(ans[i]===s)nxt();},700);
 }
 
 function upd(i){
@@ -258,7 +280,7 @@ function nxt(){
   if(ans[cur]===null)return;
   cur++;if(cur>=4){res();return;}
   document.getElementById("NB").disabled=true;
-  document.getElementById("NB").innerHTML="Proxima";
+  document.getElementById("NB").innerHTML="Proxima Pergunta  \u2192";
   drawQ(cur);
 }
 

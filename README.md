@@ -31,12 +31,12 @@ Funciona em qualquer dispositivo — celular, tablet ou computador.
 
 O questionário é baseado nas 4 dimensões fundamentais da natureza humana:
 
-| # | Dimensão | Pergunta central |
-|---|----------|-----------------|
-| 1 | **Energia** | Como você recarrega? |
-| 2 | **Percepção** | Como você enxerga o mundo? |
-| 3 | **Decisão** | Como você decide? |
-| 4 | **Estilo** | Como você se organiza? |
+| # | Dimensão | Pergunta |
+|---|----------|----------|
+| 1 | **Energia** — E ou I | Após um dia longo e intenso, o que mais te recupera e te devolve energia? |
+| 2 | **Percepção** — S ou N | Quando você aprende algo novo, o que mais captura sua atenção e te motiva? |
+| 3 | **Decisão** — T ou F | Numa decisão difícil que afeta outras pessoas, o que você prioriza naturalmente? |
+| 4 | **Estilo de Vida** — J ou P | Como você se sente mais confortável para lidar com sua rotina e seus projetos? |
 
 ---
 
