@@ -21,7 +21,7 @@ Responda **4 perguntas honestas** e descubra:
 
 ## ▶️ Acesse o Questionário
 
-👉 **[Fazer o Teste Agora](https://seu-usuario.github.io/burro-esforcado-personalidades/)**
+👉 **[Fazer o Teste Agora]([http://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/])**
 
 Funciona em qualquer dispositivo — celular, tablet ou computador.
 
