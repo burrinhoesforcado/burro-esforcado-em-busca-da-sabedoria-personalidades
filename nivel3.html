@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#050510">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Personalidade Nivel 3 - Burro Esforcado</title>
+<title>Nivel 3 — Mapa do Autoconhecimento — Burro Esforcado</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}
 body{background:#050510;color:#EDE5D8;font-family:Georgia,serif;min-height:100vh}
 #p0,#p1,#p2{min-height:100vh;padding:30px 18px 50px}
@@ -19,7 +19,7 @@ h1 em{font-style:italic;color:#E8CC60}
 .cite{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.25);border-radius:10px;padding:13px 15px;font-size:14px;font-style:italic;color:#E8CC60;line-height:1.6;margin-bottom:16px}
 .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
 .tag{font-family:sans-serif;font-size:11px;color:#C8A84B;border:1px solid rgba(200,168,75,.3);padding:5px 12px;border-radius:20px;background:rgba(200,168,75,.08)}
-.lvl{font-family:sans-serif;font-size:11px;letter-spacing:3px;color:#E8CC60;text-transform:uppercase;display:block;margin-bottom:6px;background:rgba(200,168,75,.15);padding:6px 16px;border-radius:20px;display:inline-block}
+.lvlbadge{font-family:sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;display:inline-block;padding:5px 14px;border-radius:20px;margin-bottom:14px;font-weight:700;border:1px solid rgba(200,168,75,.3);background:rgba(200,168,75,.12);color:#E8CC60}
 button{display:block;width:100%;font-family:sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#050505;background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);border:none;border-radius:13px;padding:16px 20px;cursor:pointer;-webkit-appearance:none}
 button:active{opacity:.8}
 button[disabled]{opacity:.3}
@@ -28,13 +28,15 @@ button[disabled]{opacity:.3}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
 .ghost{background:none;color:#A0B0C0;border:1px solid rgba(200,168,75,.2);margin-top:10px}
 .ghost:active{background:rgba(200,168,75,.08)}
+.menu-link{display:block;text-align:center;font-family:sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(168,180,196,.45);text-decoration:none;padding:12px 0;margin-top:4px}
+.menu-link:active{color:#C8A84B}
 .sticky{position:sticky;top:0;background:rgba(5,5,16,.97);padding:10px 16px 8px;border-bottom:1px solid rgba(200,168,75,.1);z-index:10}
 .row{display:flex;justify-content:space-between;margin-bottom:5px}
 .lab{font-family:sans-serif;font-size:10px;letter-spacing:2px;color:#A0B0C0;text-transform:uppercase}
 .cod{font-family:sans-serif;font-size:11px;color:#C8A84B;font-weight:700}
 .bar{height:3px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
 .fill{height:100%;background:linear-gradient(to right,#7A6218,#C8A84B);transition:width .4s}
-.dots{display:flex;gap:5px;justify-content:center;margin-top:7px;flex-wrap:wrap}
+.dots{display:flex;gap:4px;justify-content:center;margin-top:7px;flex-wrap:wrap}
 .dot{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(200,168,75,.18);display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:8px;color:rgba(200,168,75,.3);font-weight:700}
 .dot.ok{border-color:#C8A84B;color:#E8CC60;background:rgba(200,168,75,.12)}
 .qw{flex:1;padding:14px 16px;overflow-y:auto}
@@ -110,23 +112,24 @@ button[disabled]{opacity:.3}
 <div id="tz"></div>
 <div id="p0">
   <p style="font-family:sans-serif;font-size:11px;letter-spacing:5px;color:#C8A84B;text-transform:uppercase;margin-bottom:12px">Canal Burro Esforcado</p>
-  <span class="lvl">NIVEL 3 — AVANCADO</span>
-  <h1 style="margin-top:14px">O Mapa do<br><em>Autoconhecimento</em></h1>
+  <span class="lvlbadge">NIVEL 3 — AVANCADO</span>
+  <h1 style="margin-top:10px">O Mapa do<br><em>Autoconhecimento</em></h1>
   <div class="rule"></div>
   <p class="sub">20 perguntas — 5 por dimensao — para o perfil mais preciso possivel.</p>
-  <p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses."<br>&#8212; Socrates</p>
+  <p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses." &#8212; Socrates</p>
   <div class="tags">
     <span class="tag">20 Perguntas</span>
     <span class="tag">16 Perfis</span>
-    <span class="tag">10-15 Minutos</span>
+    <span class="tag">~12 Minutos</span>
   </div>
   <button id="b0">Descobrir Minha Personalidade</button>
+  <a href="index.html" class="menu-link" style="margin-top:16px">&#8592; Escolher Outro Nivel</a>
 </div>
 <div id="p1" style="display:none">
   <div class="sticky">
-    <div class="row"><span class="lab" id="PL">Pergunta 1 de N</span><span class="cod" id="PT"></span></div>
+    <div class="row"><span class="lab" id="PL">Pergunta 1 de 20</span><span class="cod" id="PT"></span></div>
     <div class="bar"><div class="fill" id="PF" style="width:0%"></div></div>
-    <div class="dots" id="DOTS"><div class="dot" id="D0">1</div><div class="dot" id="D1">2</div><div class="dot" id="D2">3</div><div class="dot" id="D3">4</div><div class="dot" id="D4">5</div><div class="dot" id="D5">6</div><div class="dot" id="D6">7</div><div class="dot" id="D7">8</div><div class="dot" id="D8">9</div><div class="dot" id="D9">10</div><div class="dot" id="D10">11</div><div class="dot" id="D11">12</div><div class="dot" id="D12">13</div><div class="dot" id="D13">14</div><div class="dot" id="D14">15</div><div class="dot" id="D15">16</div><div class="dot" id="D16">17</div><div class="dot" id="D17">18</div><div class="dot" id="D18">19</div><div class="dot" id="D19">20</div></div>
+    <div class="dots"><div class="dot" id="D0">1</div><div class="dot" id="D1">2</div><div class="dot" id="D2">3</div><div class="dot" id="D3">4</div><div class="dot" id="D4">5</div><div class="dot" id="D5">6</div><div class="dot" id="D6">7</div><div class="dot" id="D7">8</div><div class="dot" id="D8">9</div><div class="dot" id="D9">10</div><div class="dot" id="D10">11</div><div class="dot" id="D11">12</div><div class="dot" id="D12">13</div><div class="dot" id="D13">14</div><div class="dot" id="D14">15</div><div class="dot" id="D15">16</div><div class="dot" id="D16">17</div><div class="dot" id="D17">18</div><div class="dot" id="D18">19</div><div class="dot" id="D19">20</div></div>
   </div>
   <div class="qw" id="QB"></div>
   <div class="qbot"><button id="NB" disabled>Proxima Pergunta &#8594;</button></div>
@@ -144,10 +147,10 @@ button[disabled]{opacity:.3}
   <div class="sss" id="SS"></div>
   <div style="margin-bottom:12px">
     <span class="gt">Os 4 Grupos de Caminhada</span>
-    <div class="gr" data-g="NT" id="GNT"><span class="gi">&#128301;</span><div><span class="gn">Analistas</span><span class="gty">INTJ INTP ENTJ ENTP</span><p class="gd">Sabedoria Logica — estrategia, curiosidade e o porque das coisas</p></div></div>
-    <div class="gr" data-g="NF" id="GNF"><span class="gi">&#127807;</span><div><span class="gn">Diplomatas</span><span class="gty">INFJ INFP ENFJ ENFP</span><p class="gd">Sabedoria da Alma — proposito, empatia e valores profundos</p></div></div>
-    <div class="gr" data-g="SJ" id="GSJ"><span class="gi">&#128306;</span><div><span class="gn">Sentinelas</span><span class="gty">ISTJ ISFJ ESTJ ESFJ</span><p class="gd">Sabedoria do Dever — ordem, disciplina e responsabilidade</p></div></div>
-    <div class="gr" data-g="SP" id="GSP"><span class="gi">&#9889;</span><div><span class="gn">Exploradores</span><span class="gty">ISTP ISFP ESTP ESFP</span><p class="gd">Sabedoria da Acao — coragem, presenca e aprender fazendo</p></div></div>
+    <div class="gr" data-g="NT" id="GNT"><span class="gi">&#128301;</span><div><span class="gn">Analistas</span><span class="gty">INTJ INTP ENTJ ENTP</span><p class="gd">Sabedoria Logica</p></div></div>
+    <div class="gr" data-g="NF" id="GNF"><span class="gi">&#127807;</span><div><span class="gn">Diplomatas</span><span class="gty">INFJ INFP ENFJ ENFP</span><p class="gd">Sabedoria da Alma</p></div></div>
+    <div class="gr" data-g="SJ" id="GSJ"><span class="gi">&#128306;</span><div><span class="gn">Sentinelas</span><span class="gty">ISTJ ISFJ ESTJ ESFJ</span><p class="gd">Sabedoria do Dever</p></div></div>
+    <div class="gr" data-g="SP" id="GSP"><span class="gi">&#9889;</span><div><span class="gn">Exploradores</span><span class="gty">ISTP ISFP ESTP ESFP</span><p class="gd">Sabedoria da Acao</p></div></div>
   </div>
   <div class="av">
     <span class="avt">Aviso do Burro Esforcado</span>
@@ -158,57 +161,56 @@ button[disabled]{opacity:.3}
     <button class="sb scp" id="BCP">Copiar</button>
   </div>
   <button class="ghost" id="BRE">&#8617; Refazer o Teste</button>
-  <a href="index.html" style="display:block;text-align:center;font-family:sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(168,180,196,.5);text-decoration:none;padding:12px 0;margin-top:4px">&#8592; Escolher Outro Nivel</a>
+  <a href="index.html" class="menu-link">&#8592; Escolher Outro Nivel</a>
   <div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria</div>
 </div>
 <script>
 var Q=[
-  {dim:"EI",ax:"Energia,
-  {dim:"EI",ax:"Energia,
-  {dim:"EI",ax:"Energia,
-  {dim:"EI",ax:"Energia,
-  {dim:"EI",ax:"Energia,
-  {dim:"SN",ax:"Percepcao,
-  {dim:"SN",ax:"Percepcao,
-  {dim:"SN",ax:"Percepcao,
-  {dim:"SN",ax:"Percepcao,
-  {dim:"SN",ax:"Percepcao,
-  {dim:"TF",ax:"Decisao,
-  {dim:"TF",ax:"Decisao,
-  {dim:"TF",ax:"Decisao,
-  {dim:"TF",ax:"Decisao,
-  {dim:"TF",ax:"Decisao,
-  {dim:"JP",ax:"Estilo de Vida,
-  {dim:"JP",ax:"Estilo de Vida,
-  {dim:"JP",ax:"Estilo de Vida,
-  {dim:"JP",ax:"Estilo de Vida,
-  {dim:"JP",ax:"Estilo de Vida
+{"dim": "EI", "ax": "Energia", "q": "Depois de passar o fim de semana inteiro em casa sozinho, como voce se sente ao comecar a semana?", "a": {"s": "E", "t": "Opcao A — Inquieto, com falta de pessoas e movimento", "ti": "Extrovertido", "d": "Fiquei na minha propria cabeca tempo demais. Preciso de contato humano, conversa e movimento — sozinho por muito tempo me esgota e me deixa sem energia para agir no mundo."}, "b": {"s": "I", "t": "Opcao B — Descansado, recarregado e pronto", "ti": "Introvertido", "d": "O silencio foi exatamente o que precisava. Tempo de qualidade comigo mesmo e meu maior reabastecedor — saio renovado, clarificado e com muito mais energia do que entrei."}},
+{"dim": "EI", "ax": "Energia", "q": "Quando tem um problema complexo para resolver, qual e o seu primeiro impulso espontaneo?", "a": {"s": "E", "t": "Opcao A — Falar com alguem para pensar em voz alta", "ti": "Extrovertido", "d": "Minhas melhores ideias surgem na conversa. Pensar em voz alta, ouvir outra perspectiva, ser questionado — e assim que processo e encontro saidas que sozinho nao encontraria."}, "b": {"s": "I", "t": "Opcao B — Me isolar para pensar com calma antes de tudo", "ti": "Introvertido", "d": "Preciso de silencio para organizar os pensamentos. So falo quando ja tenho algo consistente para dizer — antes disso, nao quero nenhuma opiniao ou influencia externa."}},
+{"dim": "EI", "ax": "Energia", "q": "Em reunioes ou discussoes em grupo, qual e o seu comportamento mais natural?", "a": {"s": "E", "t": "Opcao A — Falo bastante, interajo, penso junto com o grupo", "ti": "Extrovertido", "d": "Me expresso bem em grupo. A troca ao vivo me estimula — muitas vezes descubro o que realmente penso enquanto estou falando, e isso e completamente natural para mim."}, "b": {"s": "I", "t": "Opcao B — Ouco mais, falo so quando tenho algo importante", "ti": "Introvertido", "d": "Prefiro escutar, processar internamente e contribuir com qualidade. Falar por falar nao faz sentido para mim — prefiro dizer pouco e dizer bem."}},
+{"dim": "EI", "ax": "Energia", "q": "Como as pessoas ao seu redor geralmente te percebem em ambientes sociais?", "a": {"s": "E", "t": "Opcao A — Comunicativo, animado, facil de se aproximar", "ti": "Extrovertido", "d": "Tenho facilidade de criar conexao com pessoas novas rapidamente. Me sinto bem sendo parte ativa de uma conversa animada — gosto de circular e conhecer perspectivas diferentes."}, "b": {"s": "I", "t": "Opcao B — Reservado, observador, de poucas palavras", "ti": "Introvertido", "d": "Nao me exponho facilmente em grupos grandes. Prefiro observar antes de agir e so me abro de verdade com pessoas em quem genuinamente confio ao longo do tempo."}},
+{"dim": "EI", "ax": "Energia", "q": "Qual das duas situacoes te deixa mais energizado e no seu melhor estado?", "a": {"s": "E", "t": "Opcao A — Um evento agitado cheio de pessoas e conversas", "ti": "Extrovertido", "d": "Festas, eventos, ambientes cheios de vida — me sinto em casa. A energia coletiva me alimenta e me faz sentir conectado e vivo no mundo."}, "b": {"s": "I", "t": "Opcao B — Uma tarde tranquila fazendo algo que gosto sozinho", "ti": "Introvertido", "d": "Um livro, um projeto pessoal, musica em silencio — tempo de qualidade comigo mesmo e o que me faz sentir verdadeiramente pleno, descansado e em paz."}},
+{"dim": "SN", "ax": "Percepcao", "q": "Ao ler, estudar ou aprender algo novo, o que naturalmente prende mais sua atencao?", "a": {"s": "S", "t": "Opcao A — Exemplos praticos, casos reais, instrucoes claras", "ti": "Observador", "d": "Aprendo melhor com o concreto. Exemplos da vida real e instrucoes passo a passo me dao muito mais que teorias abstratas — quero saber como funciona na pratica agora."}, "b": {"s": "N", "t": "Opcao B — Conceitos, teorias e conexoes entre ideias", "ti": "Intuitivo", "d": "O que me prende e o panorama geral — os principios que explicam tudo por baixo, as conexoes entre campos diferentes, a estrutura invisivel que sustenta os fatos."}},
+{"dim": "SN", "ax": "Percepcao", "q": "Como voce lida com a intuicao — aquele pressentimento sem explicacao logica clara?", "a": {"s": "S", "t": "Opcao A — Desconfio e prefiro dados concretos", "ti": "Observador", "d": "Intuicao sem evidencia e chute. Prefiro verificar, comparar com o que posso observar e basear minhas decisoes no que e tangivel e concreto — nao em pressentimentos vagos."}, "b": {"s": "N", "t": "Opcao B — Confio nela, minha intuicao quase sempre acerta", "ti": "Intuitivo", "d": "Meu pressentimento tem seu proprio tipo de logica e validade. Muitas vezes ele capta algo que os dados ainda nao mostraram — aprendi a ouvir esse sinal interno."}},
+{"dim": "SN", "ax": "Percepcao", "q": "Numa viagem ou projeto novo, o que genuinamente te empolga mais?", "a": {"s": "S", "t": "Opcao A — Os detalhes praticos: onde, o que, como, quando", "ti": "Observador", "d": "O prazer esta nos detalhes bem resolvidos. Pesquiso, organizo e me certifico que tudo vai funcionar bem na pratica — isso me da satisfacao e seguranca reais."}, "b": {"s": "N", "t": "Opcao B — O potencial da experiencia: o que pode acontecer", "ti": "Intuitivo", "d": "Me emociono com o que ainda nao sei — as descobertas inesperadas, as possibilidades em aberto, o que a experiencia pode me revelar sobre mim e sobre o mundo."}},
+{"dim": "SN", "ax": "Percepcao", "q": "Como voce descreveria sua relacao natural com o presente versus o futuro?", "a": {"s": "S", "t": "Opcao A — Vivo o presente, o que e real e concreto agora", "ti": "Observador", "d": "O que importa e o que esta acontecendo agora. Prefiro me concentrar no real e tangivel do que especular sobre o que pode ou nao vir a acontecer no futuro."}, "b": {"s": "N", "t": "Opcao B — Minha cabeca vive mais no futuro que no presente", "ti": "Intuitivo", "d": "Estou sempre pensando no que vem — planos, possibilidades, versoes melhores das coisas. O presente e apenas o ponto de partida para o que imagino que pode existir."}},
+{"dim": "SN", "ax": "Percepcao", "q": "Quando le as instrucoes de algo novo, qual e a sua tendencia mais espontanea?", "a": {"s": "S", "t": "Opcao A — Sigo passo a passo, sem pular nada", "ti": "Observador", "d": "As instrucoes existem por uma razao. Sigo na ordem com atencao para garantir que o resultado seja o esperado. Improvisar aqui e pedir problema e erros desnecessarios."}, "b": {"s": "N", "t": "Opcao B — Dou uma olhada geral e improviso o resto", "ti": "Intuitivo", "d": "Entendo a logica por baixo e depois sigo minha intuicao. Detalhes excessivos me travam — prefiro descobrir fazendo e ajustar no caminho conforme vou aprendendo."}},
+{"dim": "TF", "ax": "Decisao", "q": "Voce precisa dar um feedback negativo para alguem que respeita. Como procede naturalmente?", "a": {"s": "T", "t": "Opcao A — Digo diretamente o que precisa melhorar", "ti": "Racional", "d": "Clareza e o maior respeito que posso oferecer. Rodeios perdem tempo e confundem. A pessoa merece saber com precisao o que precisa mudar — sem ambiguidade ou eufemismos."}, "b": {"s": "F", "t": "Opcao B — Cuido muito da forma para preservar a relacao", "ti": "Sentimental", "d": "O que digo e tao importante quanto como digo. Me importo com o estado emocional da pessoa — isso faz parte essencial de um feedback que realmente ajuda de verdade."}},
+{"dim": "TF", "ax": "Decisao", "q": "Numa discussao acalorada, o que e mais verdadeiro e espontaneo em voce?", "a": {"s": "T", "t": "Opcao A — Foco nos argumentos e logica, independente do tom", "ti": "Racional", "d": "O que importa e quem tem razao, nao quem esta se sentindo mal. Separo o emocional do racional e foco na substancia — isso e mais honesto e util no longo prazo."}, "b": {"s": "F", "t": "Opcao B — Me importo com o tom e com como a pessoa esta", "ti": "Sentimental", "d": "Uma discussao que magoa sem necessidade nao vale vitoria alguma. Para mim, preservar a relacao e tao importante quanto o conteudo do que esta sendo discutido."}},
+{"dim": "TF", "ax": "Decisao", "q": "O que te incomoda mais profundamente ao presenciar uma injustica?", "a": {"s": "T", "t": "Opcao A — A incoerencia logica, a decisao nao faz sentido", "ti": "Racional", "d": "Injustica e incoerencia. O que me irrita e quando as regras nao sao aplicadas de forma justa e consistente para todos — isso e irracional, errado e precisa ser corrigido."}, "b": {"s": "F", "t": "Opcao B — O sofrimento humano causado, alguem esta sendo magoado", "ti": "Sentimental", "d": "O que me parte o coracao e o impacto humano real. O dano emocional causado nas pessoas e o que mais me mobiliza a querer agir e mudar a situacao concreta."}},
+{"dim": "TF", "ax": "Decisao", "q": "Como voce reage ao ver alguem que respeita tomando uma decisao que considera equivocada?", "a": {"s": "T", "t": "Opcao A — Aponto o erro e explico meu raciocinio", "ti": "Racional", "d": "Silencio nao ajuda ninguem. Se vejo um erro claro, digo — com respeito, mas sem eufemismos. A pessoa merece saber o que estou observando, independente da reacao."}, "b": {"s": "F", "t": "Opcao B — Avalio se ela esta pronta para ouvir antes de falar", "ti": "Sentimental", "d": "Nao adianta ter razao se a pessoa nao esta receptiva. Espero a hora certa, cuido do tom, e so falo se sentir que vai realmente ajudar — nao apenas me fazer sentir bem."}},
+{"dim": "TF", "ax": "Decisao", "q": "O que voce considera mais fundamental numa equipe ou parceria de trabalho?", "a": {"s": "T", "t": "Opcao A — Competencia, papeis claros e entrega de resultados", "ti": "Racional", "d": "Quero trabalhar com gente competente que entrega o que promete. Relacoes saudaveis sao otimas, mas o que sustenta uma equipe de verdade e competencia e compromisso."}, "b": {"s": "F", "t": "Opcao B — Confianca mutua, empatia e ambiente harmonioso", "ti": "Sentimental", "d": "Time que confia um no outro e que se respeita profundamente produz muito mais. Para mim, a qualidade do relacionamento e a base que sustenta tudo o mais."}},
+{"dim": "JP", "ax": "Estilo de Vida", "q": "Como e o seu espaco de trabalho ou ambiente pessoal na maior parte do tempo?", "a": {"s": "J", "t": "Opcao A — Organizado, cada coisa tem seu lugar definido", "ti": "Planejador", "d": "Desordem me atrapalha e me estressa. Tenho um sistema, um lugar para cada coisa — me sinto muito mais produtivo, claro e focado num ambiente bem organizado."}, "b": {"s": "P", "t": "Opcao B — Um certo caos criativo com logica propria", "ti": "Adaptavel", "d": "Parece bagunca para os outros, mas eu sei onde esta cada coisa. Esse ambiente aberto e espontaneo e onde minha mente funciona melhor e com mais criatividade genuina."}},
+{"dim": "JP", "ax": "Estilo de Vida", "q": "Voce esta no meio de um projeto quando surge uma ideia nova e claramente melhor. O que faz?", "a": {"s": "J", "t": "Opcao A — Anoto para depois e termino o que comecei", "ti": "Planejador", "d": "Compromisso e compromisso. Termino o que estava fazendo, avalio a nova ideia com calma e decido se realmente vale a mudanca antes de agir por impulso."}, "b": {"s": "P", "t": "Opcao B — Mudo o rumo na hora, a ideia melhor e a certa", "ti": "Adaptavel", "d": "Nao faz sentido continuar num caminho inferior so porque ja comecei. Me adapto ao que e melhor sem culpa — flexibilidade inteligente e uma virtude, nao fraqueza."}},
+{"dim": "JP", "ax": "Estilo de Vida", "q": "Como voce se relaciona com listas de tarefas, agendas e planejamento detalhado?", "a": {"s": "J", "t": "Opcao A — Uso sempre, me dao controle, clareza e paz", "ti": "Planejador", "d": "Minha agenda e minha aliada. Lista de tarefas, metas semanais, planejamento — sem isso me sinto perdido e ansioso. A estrutura me liberta para agir com mais confianca."}, "b": {"s": "P", "t": "Opcao B — Raramente uso, prefiro deixar o dia se desenrolar", "ti": "Adaptavel", "d": "Listas me prendem. Minha melhor produtividade vem da espontaneidade e do que o momento pede — nao de um plano rigido que rapidamente perde o sentido da realidade."}},
+{"dim": "JP", "ax": "Estilo de Vida", "q": "Voce esta viajando e o plano original muda completamente de ultima hora. Como reage?", "a": {"s": "J", "t": "Opcao A — Fico frustrado, precisava daquele plano para me sentir seguro", "ti": "Planejador", "d": "Mudancas de ultima hora me tiram do eixo e custam energia. Gosto de saber o que vem pela frente e me preparar adequadamente — isso me da seguranca genuina."}, "b": {"s": "P", "t": "Opcao B — Me adapto rapidamente e muitas vezes curto mais o improviso", "ti": "Adaptavel", "d": "Imprevisto nao e problema — frequentemente e oportunidade. Minha memoria mais marcante de viagem quase sempre veio de algo fora do roteiro original."}},
+{"dim": "JP", "ax": "Estilo de Vida", "q": "Como voce geralmente inicia uma tarefa ou projeto novo e importante?", "a": {"s": "J", "t": "Opcao A — Com um plano claro e definido antes de comecar", "ti": "Planejador", "d": "Preciso ter o mapa na mao antes de dar o primeiro passo. Defino objetivo, passos e prazos — e so entao, com clareza total, coloco a mao na massa com plena confianca."}, "b": {"s": "P", "t": "Opcao B — Mergulho de cabeca e vou descobrindo no caminho", "ti": "Adaptavel", "d": "Planejar demais me paralisa. Prefiro dar o primeiro passo, explorar, aprender com o que encontro e ajustar conforme avanço — a acao me revela o caminho."}}
 ];
 var P={
-  INTJ:{nm:"O Arquiteto",g:"NT",gn:"Analistas",ds:"Estrategista visionario e independente. Ve o mundo como um sistema de possibilidades a otimizar, combinando imaginacao criativa com determinacao implacavel.",wi:"Sua sabedoria nasce na solidao da reflexao profunda. O desafio e aprender a confiar nas pessoas e abrir espaco para o emocional — a logica sem conexao humana nao chega tao longe.",st:["Pensamento estrategico de longo prazo","Autodisciplina e determinacao","Capacidade de transformar visao em execucao"],sh:["Pode ser excessivamente critico e exigente","Tende ao isolamento intelectual","Dificuldade em aceitar emocoes como dados validos"]},
-  INTP:{nm:"O Logico",g:"NT",gn:"Analistas",ds:"Pensador inovador com sede insaciavel de conhecimento. Busca padroes e principios ocultos em tudo que observa, carregando visoes transformadoras.",wi:"Sua riqueza esta nas ideias que outros nao enxergam. O maior desafio e trazer essas ideias para o chao da vida real — uma acao concreta vale mais que mil teorias perfeitas.",st:["Raciocinio analitico profundo","Pensamento original e independente","Humildade intelectual genuina"],sh:["Procrastinacao cronica por busca da perfeicao","Paralisia pela analise excessiva","Dificuldade de concluir o que comeca"]},
-  ENTJ:{nm:"O Comandante",g:"NT",gn:"Analistas",ds:"Lider nato, ousado e decisivo. Enxerga oportunidades onde outros veem obstaculos e transforma visoes em planos concretos com energia implacavel.",wi:"Sua forca esta no comando e na execucao. A sabedoria mais profunda e aprender quando liderar com autoridade — e quando servir com humildade.",st:["Visao estrategica aliada a capacidade de execucao","Confianca e clareza sob pressao","Habilidade rara de mobilizar equipes"],sh:["Pode atropelar sentimentos sem perceber","Impaciencia com limitacoes alheias","Tendencia ao workaholismo excessivo"]},
-  ENTP:{nm:"O Inovador",g:"NT",gn:"Analistas",ds:"Pensador rapido e criativo que ama desafiar ideias estabelecidas. Prospera no debate intelectual e encontra solucoes engenhosas onde outros desistem.",wi:"Sua mente e um fogo de artificio — brilhante e explosivo. A sabedoria esta em aprender a pousar: comprometer-se com algo maior do que a proxima grande ideia.",st:["Pensamento agil com conexoes incomuns","Carisma e habilidade de comunicacao","Coragem de questionar o que todos aceitam"],sh:["Dificuldade de concluir projetos","Usa o debate para fugir da acao concreta","Tende a subestimar o poder da consistencia"]},
-  INFJ:{nm:"O Conselheiro",g:"NF",gn:"Diplomatas",ds:"O tipo mais raro. Idealista com visao profunda da natureza humana, guiado por conviccoes inabalavels. Sente a dor do mundo e dedica sua vida a torna-lo melhor.",wi:"Voce carrega o peso do mundo no silencio do seu interior. Aprenda a cuidar de si mesmo com o mesmo amor e cuidado que oferece aos outros — voce nao pode dar o que nao tem.",st:["Intuicao profunda sobre pessoas e situacoes","Empatia genuina com integridade intacta","Comprometimento inabalavel com proposito"],sh:["Esgotamento emocional pelo excesso de doacao","Grande dificuldade de estabelecer limites","Perfeccionismo que paralisa a acao"]},
-  INFP:{nm:"O Mediador",g:"NF",gn:"Diplomatas",ds:"Sonhador poetico guiado por valores profundos. Busca sentido em tudo e enxerga o potencial oculto nas pessoas, comprometido com a autenticidade acima de tudo.",wi:"Sua riqueza esta nos valores que ninguem pode comprar. O desafio e transformar esse mundo interior rico em presenca real no mundo — sua voz e necessaria.",st:["Autenticidade e profundidade emocional raras","Empatia criativa que cura e inspira","Comprometimento intenso com valores pessoais"],sh:["Hipersensibilidade excessiva as criticas","Idealismo que pode paralisar a acao","Procrastinacao por medo de nao estar a altura"]},
-  ENFJ:{nm:"O Protagonista",g:"NF",gn:"Diplomatas",ds:"Lider carismatico e genuinamente altruista. Encontra realizacao profunda em ajudar outros a crescerem, enxergando o melhor em cada pessoa.",wi:"Voce ilumina os outros com maestria. Mas lembre-se: sua propria chama precisa ser alimentada para continuar brilhando — cuidar de si nao e egoismo, e sabedoria.",st:["Lideranca baseada em valores autenticos","Empatia que inspira e mobiliza pessoas","Comunicacao poderosa e autentica"],sh:["Negligencia cronica as proprias necessidades","Hipersensibilidade a desaprovacao","Assume responsabilidade alem do que pode carregar"]},
-  ENFP:{nm:"O Entusiasta",g:"NF",gn:"Diplomatas",ds:"Espirito livre e criativo, transbordando entusiasmo e imaginacao. Ve conexoes entre pessoas e ideias que outros nao percebem, inspirando os que estao ao redor.",wi:"Sua alegria e sua curiosidade sao dons genuinos e raros. A sabedoria esta em canalizar essa energia com foco — a borboleta que pousa transforma; a que so voa nunca termina nada.",st:["Criatividade e originalidade fora do comum","Entusiasmo genuinamente contagiante","Adaptabilidade emocional e abertura ao novo"],sh:["Grande dificuldade de manter foco ate o fim","Sensibilidade excessiva a rejeicao","Fuga de responsabilidades dificeis ou rotineiras"]},
-  ISTJ:{nm:"O Inspetor",g:"SJ",gn:"Sentinelas",ds:"A pedra angular de qualquer estrutura. Responsavel, confiavel e meticuloso, honra seus compromissos com rigor e acredita que o dever e a mais nobre forma de amor.",wi:"Sua confiabilidade e seu rigor sao um tesouro raro neste mundo. A sabedoria esta em aprender a abracar a mudanca — o mundo nao para, e voce tem o potencial de lidera-lo.",st:["Confiabilidade e integridade absolutamente inabalavels","Atencao precisa a detalhes que outros ignoram","Disciplina e comprometimento exemplares"],sh:["Resistencia excessiva a mudancas necessarias","Rigidez quando as regras precisariam ceder","Dificuldade em expressar vulnerabilidade"]},
-  ISFJ:{nm:"O Defensor",g:"SJ",gn:"Sentinelas",ds:"Protetor dedicado e profundamente atencioso. Cuida com uma devocao silenciosa que raramente pede reconhecimento, construindo mundos seguros para quem ama.",wi:"Seu cuidado silencioso constroi mais do que voce imagina. Aprenda a pedir ajuda — aceitar amor e cuidado de volta tambem e um ato de sabedoria e forca.",st:["Cuidado genuino com memoria afetiva excepcional","Confiabilidade e lealdade que sustentam relacionamentos","Cria ambientes seguros e acolhedores com consistencia"],sh:["Grande dificuldade de estabelecer limites saudaveis","Acumula ressentimentos sem expressa-los","Suprime as proprias necessidades ate o esgotamento"]},
-  ESTJ:{nm:"O Supervisor",g:"SJ",gn:"Sentinelas",ds:"Organizador excelente, direto e comprometido com a ordem. Lidera com firmeza baseada em principios claros e e o primeiro a colocar a mao na massa.",wi:"Sua forca esta na estrutura solida que voce constroi. A sabedoria mais profunda e saber quando as regras precisam ser questionadas — ate estruturas precisam evoluir.",st:["Capacidade organizacional e lideranca pratica","Clareza e objetividade que geram confianca","Dedicacao inabalavel ao dever e ao compromisso"],sh:["Pode ser excessivamente rigido e inflexivel","Dificuldade em aceitar abordagens diferentes das suas","Tende a suprimir emocoes por acha-las improdutivas"]},
-  ESFJ:{nm:"O Provedor",g:"SJ",gn:"Sentinelas",ds:"Cuidador generoso e sociavel que encontra realizacao em servir. Harmoniza grupos, lembra de detalhes importantes e cria ambientes onde todos se sentem bem-vindos.",wi:"Voce nutre o mundo ao redor com uma generosidade rara. A sabedoria esta em nutrir tambem seus proprios sonhos e necessidades — sem culpa e sem pedir permissao.",st:["Generosidade e calor humano genuinamente autenticos","Habilidade excepcional de unir e harmonizar grupos","Memoria social e atencao aos detalhes que encantam"],sh:["Necessidade intensa e constante de aprovacao externa","Grande dificuldade com conflitos diretos","Perde a propria identidade ao servir demais"]},
-  ISTP:{nm:"O Virtuoso",g:"SP",gn:"Exploradores",ds:"Observador calmo e analitico que adora explorar como o mundo funciona. Habilidoso com as maos e a mente, encontra solucoes inovadoras na pratica.",wi:"Voce aprende fazendo com uma maestria silenciosa que poucos alcanccam. A sabedoria vem quando voce permite que as pessoas vejam o que esta dentro de voce.",st:["Resolucao criativa de problemas praticos","Calma excepcional em situacoes de crise","Independencia e autossuficiencia genuinas"],sh:["Grande dificuldade de comunicar sentimentos","Pode parecer frio ou distante sem querer","Tendencia ao isolamento quando esta em dificuldade"]},
-  ISFP:{nm:"O Aventureiro",g:"SP",gn:"Exploradores",ds:"Artista quieto e profundamente sensivel, com um senso estetico que captura o que palavras nao alcancam. Vive no presente com graca e autenticidade.",wi:"Sua beleza interior e absolutamente real e transformadora. A sabedoria esta em deixa-la visivel — o mundo precisa profundamente do que voce carrega dentro de si.",st:["Autenticidade estetica e emocional profundas","Presenca plena no momento que encanta","Empatia silenciosa que cura sem precisar de palavras"],sh:["Dificuldade de planejar e pensar no longo prazo","Evita conflitos ate o ponto de se prejudicar","Hipersensibilidade a criticas ao seu trabalho criativo"]},
-  ESTP:{nm:"O Empreendedor",g:"SP",gn:"Exploradores",ds:"Energico, astuto e perceptivo. Aprende com a acao e influencia os outros com carisma real. Para ele, a realidade e seu campo de jogo e laboratorio.",wi:"Sua coragem de agir e impressionante — voce vai quando outros hesitam. A sabedoria mais profunda esta em aprender a parar e sentir: nem tudo se resolve no movimento.",st:["Carisma e presenca que energizam ambientes","Decisao rapida e eficaz sob pressao real","Coragem genuina e apetite por riscos calculados"],sh:["Age antes de pensar nas consequencias","Tedio rapido em rotina e em pensamento abstrato","Pode ser insensivel ao impacto emocional sem perceber"]},
-  ESFP:{nm:"O Animador",g:"SP",gn:"Exploradores",ds:"Espontaneo, energetico e generoso. Ama a vida com intensidade e tem o dom de transformar qualquer momento comum em uma celebracao especial.",wi:"Sua alegria e genuinamente transformadora — voce ilumina os ambientes que frequenta. Os momentos quietos tambem guardam beleza profunda — eles guardam sua profundidade.",st:["Entusiasmo e alegria genuinamente contagiantes","Generosidade espontanea que toca coracoes","Habilidade de viver o presente com plenitude total"],sh:["Grande dificuldade de planejar o longo prazo","Tende a evitar assuntos serios pela leveza","Dispersao e falta de foco sustentado em projetos"]}
+  INTJ:{nm:"O Arquiteto",g:"NT",gn:"Analistas",ds:"Estrategista visionario e independente. Ve o mundo como um sistema de possibilidades a otimizar, combinando imaginacao criativa com determinacao implacavel.",wi:"Sua sabedoria nasce na solidao da reflexao profunda. Aprenda a confiar nas pessoas e abrir espaco para o emocional.",st:["Pensamento estrategico de longo prazo","Autodisciplina e determinacao inabalavels","Transforma visao em execucao"],sh:["Pode ser excessivamente critico","Tende ao isolamento intelectual","Dificuldade em aceitar emocoes como dados"]},
+  INTP:{nm:"O Logico",g:"NT",gn:"Analistas",ds:"Pensador inovador com sede insaciavel de conhecimento. Busca padroes e principios ocultos em tudo que observa.",wi:"Sua riqueza esta nas ideias. O maior desafio e trazer essas ideias para o chao — uma acao concreta vale mais que mil teorias.",st:["Raciocinio analitico profundo","Pensamento original e independente","Humildade intelectual genuina"],sh:["Procrastinacao cronica","Paralisia pela analise excessiva","Dificuldade de concluir o que comeca"]},
+  ENTJ:{nm:"O Comandante",g:"NT",gn:"Analistas",ds:"Lider nato, ousado e decisivo. Enxerga oportunidades onde outros veem obstaculos e transforma visoes em planos concretos.",wi:"Sua forca esta no comando. A sabedoria mais profunda e aprender quando liderar — e quando servir.",st:["Visao estrategica aliada a execucao","Confianca e clareza sob pressao","Habilidade rara de mobilizar equipes"],sh:["Pode atropelar sentimentos","Impaciencia com limitacoes alheias","Tendencia ao workaholismo"]},
+  ENTP:{nm:"O Inovador",g:"NT",gn:"Analistas",ds:"Pensador rapido e criativo que ama desafiar ideias estabelecidas. Prospera no debate intelectual.",wi:"Sua mente e um fogo de artificio. A sabedoria esta em pousar e comprometer-se com algo maior.",st:["Pensamento agil com conexoes incomuns","Carisma e comunicacao","Questiona o que todos aceitam"],sh:["Dificuldade de concluir projetos","Usa o debate para fugir da acao","Subestima o poder da consistencia"]},
+  INFJ:{nm:"O Conselheiro",g:"NF",gn:"Diplomatas",ds:"O tipo mais raro. Idealista com visao profunda da natureza humana. Sente a dor do mundo e dedica sua vida a torna-lo melhor.",wi:"Voce carrega o peso do mundo no silencio. Aprenda a cuidar de si com o mesmo amor que oferece aos outros.",st:["Intuicao profunda sobre pessoas","Empatia genuina com integridade","Comprometimento inabalavel com proposito"],sh:["Esgotamento pelo excesso de doacao","Dificuldade de estabelecer limites","Perfeccionismo que paralisa a acao"]},
+  INFP:{nm:"O Mediador",g:"NF",gn:"Diplomatas",ds:"Sonhador poetico guiado por valores profundos. Busca sentido em tudo e enxerga o potencial oculto nas pessoas.",wi:"Sua riqueza esta nos valores. O desafio e transformar esse mundo interior em presenca real — sua voz e necessaria.",st:["Autenticidade e profundidade emocional","Empatia criativa que cura","Comprometimento com valores pessoais"],sh:["Hipersensibilidade as criticas","Idealismo paralisante","Procrastinacao por medo de nao estar a altura"]},
+  ENFJ:{nm:"O Protagonista",g:"NF",gn:"Diplomatas",ds:"Lider carismatico e genuinamente altruista. Encontra realizacao em ajudar outros a crescerem.",wi:"Voce ilumina os outros. Sua chama precisa ser alimentada para continuar brilhando — cuidar de si e sabedoria.",st:["Lideranca baseada em valores","Empatia que inspira e mobiliza","Comunicacao poderosa e autentica"],sh:["Negligencia as proprias necessidades","Hipersensibilidade a desaprovacao","Assume responsabilidade alem do possivel"]},
+  ENFP:{nm:"O Entusiasta",g:"NF",gn:"Diplomatas",ds:"Espirito livre e criativo, transbordando entusiasmo. Ve conexoes entre pessoas e ideias que outros nao percebem.",wi:"Sua alegria e curiosidade sao dons raros. A sabedoria esta em canalizar essa energia com foco.",st:["Criatividade e originalidade","Entusiasmo contagiante","Adaptabilidade emocional"],sh:["Dificuldade de manter foco ate o fim","Sensibilidade excessiva a rejeicao","Fuga de responsabilidades dificeis"]},
+  ISTJ:{nm:"O Inspetor",g:"SJ",gn:"Sentinelas",ds:"A pedra angular de qualquer estrutura. Responsavel e meticuloso, honra seus compromissos com rigor.",wi:"Sua confiabilidade e um tesouro raro. A sabedoria esta em abracar a mudanca — o mundo nao para.",st:["Confiabilidade e integridade inabalavels","Atencao precisa a detalhes","Disciplina e comprometimento exemplares"],sh:["Resistencia excessiva a mudancas","Rigidez quando as regras precisariam ceder","Dificuldade em expressar vulnerabilidade"]},
+  ISFJ:{nm:"O Defensor",g:"SJ",gn:"Sentinelas",ds:"Protetor dedicado e atencioso. Cuida com uma devocao silenciosa que raramente pede reconhecimento.",wi:"Seu cuidado silencioso constroi mais do que imagina. Aprenda a pedir ajuda — aceitar amor de volta e forca.",st:["Cuidado genuino com memoria afetiva","Confiabilidade e lealdade profundas","Cria ambientes seguros e acolhedores"],sh:["Dificuldade de estabelecer limites","Acumula ressentimentos sem expressa-los","Suprime as proprias necessidades"]},
+  ESTJ:{nm:"O Supervisor",g:"SJ",gn:"Sentinelas",ds:"Organizador excelente e direto. Lidera com firmeza baseada em principios claros.",wi:"Sua forca esta na estrutura. A sabedoria e saber quando as regras precisam ser questionadas.",st:["Capacidade organizacional e lideranca pratica","Clareza e objetividade","Dedicacao inabalavel ao dever"],sh:["Pode ser excessivamente rigido","Dificuldade com abordagens diferentes","Suprime emocoes por acha-las improdutivas"]},
+  ESFJ:{nm:"O Provedor",g:"SJ",gn:"Sentinelas",ds:"Cuidador generoso que encontra realizacao em servir. Harmoniza grupos e faz todos se sentirem bem-vindos.",wi:"Voce nutre o mundo com generosidade rara. A sabedoria esta em nutrir tambem seus sonhos — sem culpa.",st:["Generosidade e calor humano autenticos","Habilidade de unir e harmonizar grupos","Memoria social extraordinaria"],sh:["Necessidade intensa de aprovacao","Dificuldade com conflitos diretos","Perde a identidade ao servir demais"]},
+  ISTP:{nm:"O Virtuoso",g:"SP",gn:"Exploradores",ds:"Observador calmo que adora explorar como o mundo funciona. Encontra solucoes inovadoras na pratica.",wi:"Voce aprende fazendo com maestria silenciosa. A sabedoria vem quando permite que as pessoas vejam o que esta dentro.",st:["Resolucao criativa de problemas praticos","Calma em situacoes de crise","Independencia e autossuficiencia"],sh:["Dificuldade de comunicar sentimentos","Pode parecer frio ou distante","Tendencia ao isolamento"]},
+  ISFP:{nm:"O Aventureiro",g:"SP",gn:"Exploradores",ds:"Artista quieto e sensivel, com senso estetico que captura o que palavras nao alcancam.",wi:"Sua beleza interior e real. A sabedoria esta em deixa-la visivel — o mundo precisa do que voce carrega.",st:["Autenticidade estetica e emocional","Presenca plena no momento","Empatia silenciosa que cura"],sh:["Dificuldade de planejar o longo prazo","Evita conflitos ate o ponto de se prejudicar","Hipersensibilidade a criticas"]},
+  ESTP:{nm:"O Empreendedor",g:"SP",gn:"Exploradores",ds:"Energico e perceptivo, aprende com a acao. A realidade e seu campo de jogo e laboratorio.",wi:"Sua coragem de agir e impressionante. A sabedoria esta em aprender a parar e sentir — nem tudo se resolve no movimento.",st:["Carisma e presenca que energizam","Decisao rapida sob pressao","Coragem e apetite por riscos calculados"],sh:["Age antes de pensar nas consequencias","Tedio em rotina e abstrato","Pode ser insensivel sem perceber"]},
+  ESFP:{nm:"O Animador",g:"SP",gn:"Exploradores",ds:"Espontaneo e generoso, ama a vida com intensidade. Tem o dom de transformar qualquer momento em celebracao.",wi:"Sua alegria e genuinamente transformadora. Os momentos quietos guardam beleza profunda — eles guardam sua profundidade.",st:["Entusiasmo e alegria contagiantes","Generosidade espontanea","Presenca plena no momento"],sh:["Dificuldade de planejar o longo prazo","Evita assuntos serios pela leveza","Dispersao e falta de foco sustentado"]}
 };
-
 var ans=[];
 var cur=0;
 var rc="";
 var scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
 
-function pg(n){
+function showPage(n){
   document.getElementById("p0").style.display=n===0?"flex":"none";
   document.getElementById("p1").style.display=n===1?"flex":"none";
   document.getElementById("p2").style.display=n===2?"block":"none";
@@ -216,68 +218,103 @@ function pg(n){
 }
 
 function startQ(){
-  ans=new Array(Q.length).fill(null);
+  var len=Q.length;
+  ans=[];
+  for(var x=0;x<len;x++) ans.push(null);
   cur=0;rc="";
   scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
-  for(var i=0;i<Q.length;i++){var d=document.getElementById("D"+i);if(d){d.className="dot";d.innerHTML=(i+1);}}
+  for(var i=0;i<len;i++){
+    var d=document.getElementById("D"+i);
+    if(d){d.className="dot";d.innerHTML=(i+1);}
+  }
   document.getElementById("NB").disabled=true;
   document.getElementById("NB").innerHTML="Proxima Pergunta &#8594;";
   document.getElementById("PF").style.width="0%";
   document.getElementById("PT").innerHTML="";
-  drawQ(0);pg(1);
+  drawQ(0);
+  showPage(1);
 }
 
 function drawQ(i){
   var q=Q[i];
-  var h="<div class="card"+(ans[i]!==null?" ans":"")+"" id="QC">";
-  h+="<div class="qh"><div class="qr">";
-  h+="<span class="qn">"+(i+1)+"</span>";
-  h+="<span class="qax">"+q.dim.slice(0,1)+" ou "+q.dim.slice(1)+" — "+q.ax+"</span>";
-  h+="<span class="qbd" id="QBDG">"+(ans[i]!==null?ans[i].s:q.dim.slice(0,1)+"/"+q.dim.slice(1))+"</span>";
-  h+="</div><div class="qt">"+q.q+"</div></div>";
-  h+="<div class="opts">";
-  h+="<div class="opt"+(ans[i]===q.a?" sel":"")+"" id="OA" onclick="pick("+i+",0)"><span class="otg">"+q.a.t+"</span><span class="ott">"+q.a.ti+"</span><p class="odd">"+q.a.d+"</p></div>";
-  h+="<div class="opt"+(ans[i]===q.b?" sel":"")+"" id="OB" onclick="pick("+i+",1)"><span class="otg">"+q.b.t+"</span><span class="ott">"+q.b.ti+"</span><p class="odd">"+q.b.d+"</p></div>";
+  var isAns=(ans[i]!==null);
+  var selA=(isAns && ans[i].s===q.a.s);
+  var selB=(isAns && ans[i].s===q.b.s);
+  var badge=isAns?ans[i].s:(q.dim.charAt(0)+"/"+q.dim.charAt(1));
+  var h="";
+  h+="<div class=\"card"+(isAns?" ans":"")+"\" id=\"QC\">";
+  h+="<div class=\"qh\"><div class=\"qr\">";
+  h+="<span class=\"qn\">"+(i+1)+"</span>";
+  h+="<span class=\"qax\">"+q.dim.charAt(0)+" ou "+q.dim.charAt(1)+" &mdash; "+q.ax+"</span>";
+  h+="<span class=\"qbd\" id=\"QBDG\">"+badge+"</span>";
+  h+="</div>";
+  h+="<div class=\"qt\">"+q.q+"</div></div>";
+  h+="<div class=\"opts\">";
+  h+="<div class=\"opt"+(selA?" sel":"")+"\" id=\"OA\" onclick=\"pick("+i+",0)\">";
+  h+="<span class=\"otg\">"+q.a.t+"</span>";
+  h+="<span class=\"ott\">"+q.a.ti+"</span>";
+  h+="<p class=\"odd\">"+q.a.d+"</p></div>";
+  h+="<div class=\"opt"+(selB?" sel":"")+"\" id=\"OB\" onclick=\"pick("+i+",1)\">";
+  h+="<span class=\"otg\">"+q.b.t+"</span>";
+  h+="<span class=\"ott\">"+q.b.ti+"</span>";
+  h+="<p class=\"odd\">"+q.b.d+"</p></div>";
   h+="</div></div>";
   document.getElementById("QB").innerHTML=h;
-  upd(i);
+  updUI(i);
 }
 
 function pick(i,choice){
   var q=Q[i];
-  var chosen=choice===0?q.a:q.b;
+  var chosen=(choice===0)?q.a:q.b;
   ans[i]=chosen;
-  var c=document.getElementById("QC");if(c)c.className="card ans";
+  var c=document.getElementById("QC");
+  if(c) c.className="card ans";
   var b=document.getElementById("QBDG");
-  if(b){b.innerHTML=chosen.s;b.style.color="#E8CC60";b.style.borderColor="rgba(200,168,75,.28)";b.style.background="rgba(200,168,75,.1)";}
-  var oa=document.getElementById("OA");var ob=document.getElementById("OB");
-  if(oa)oa.className="opt"+(choice===0?" sel":"");
-  if(ob)ob.className="opt"+(choice===1?" sel":"");
-  var dt=document.getElementById("D"+i);if(dt){dt.className="dot ok";dt.innerHTML=(i+1);}
+  if(b){
+    b.innerHTML=chosen.s;
+    b.style.color="#E8CC60";
+    b.style.borderColor="rgba(200,168,75,.28)";
+    b.style.background="rgba(200,168,75,.1)";
+  }
+  var oa=document.getElementById("OA");
+  var ob=document.getElementById("OB");
+  if(oa) oa.className="opt"+(choice===0?" sel":"");
+  if(ob) ob.className="opt"+(choice===1?" sel":"");
+  var dt=document.getElementById("D"+i);
+  if(dt){dt.className="dot ok";dt.innerHTML=(i+1);}
   document.getElementById("NB").disabled=false;
-  document.getElementById("NB").innerHTML=i<Q.length-1?"Proxima Pergunta &#8594;":"&#10024; Ver Meu Resultado";
-  upd(i);
+  if(i<Q.length-1){
+    document.getElementById("NB").innerHTML="Proxima Pergunta &#8594;";
+  } else {
+    document.getElementById("NB").innerHTML="&#10024; Ver Meu Resultado";
+  }
+  updUI(i);
 }
 
-function upd(i){
+function updUI(i){
   document.getElementById("PL").innerHTML="Pergunta "+(i+1)+" de "+Q.length;
   document.getElementById("PF").style.width=((i/Q.length)*100)+"%";
 }
 
-function nxt(){
-  if(ans[cur]===null)return;
-  cur++;if(cur>=Q.length){res();return;}
+function nextQ(){
+  if(ans[cur]===null) return;
+  cur++;
+  if(cur>=Q.length){showResult();return;}
   document.getElementById("NB").disabled=true;
   document.getElementById("NB").innerHTML="Proxima Pergunta &#8594;";
   drawQ(cur);
   document.getElementById("p1").scrollTop=0;
 }
 
-function res(){
+function showResult(){
   scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
-  for(var i=0;i<ans.length;i++){if(ans[i])scores[ans[i].s]++;}
+  for(var i=0;i<ans.length;i++){
+    if(ans[i] && ans[i].s) scores[ans[i].s]++;
+  }
   var code=(scores.E>=scores.I?"E":"I")+(scores.S>=scores.N?"S":"N")+(scores.T>=scores.F?"T":"F")+(scores.J>=scores.P?"J":"P");
-  rc=code;var p=P[code];if(!p)return;
+  rc=code;
+  var p=P[code];
+  if(!p) return;
   document.getElementById("RC").innerHTML=code;
   document.getElementById("RN").innerHTML=p.nm;
   document.getElementById("RG").innerHTML="Grupo dos "+p.gn+" ("+p.g+")";
@@ -289,49 +326,68 @@ function res(){
   var dk=[["E","I"],["S","N"],["T","F"],["J","P"]];
   var ph="";
   for(var i=0;i<4;i++){
-    var l=dk[i][0];var r=dk[i][1];
-    var ls=scores[l];var rs=scores[r];
-    var tot=ls+rs;var pct=tot>0?Math.round(ls/tot*100):50;
-    ph+="<div class="pill"><span class="pi">"+di[i]+"</span><span class="pl2">"+dl[i]+"</span><span class="pv">"+(scores[l]>=scores[r]?l:r)+" — "+(scores[l]>=scores[r]?dn[l]:dn[r])+"</span></div>";
+    var w=(scores[dk[i][0]]>=scores[dk[i][1]])?dk[i][0]:dk[i][1];
+    ph+="<div class=\"pill\"><span class=\"pi\">"+di[i]+"</span><span class=\"pl2\">"+dl[i]+"</span><span class=\"pv\">"+w+" &mdash; "+dn[w]+"</span></div>";
   }
   document.getElementById("DP").innerHTML=ph;
-  var h="<div class="sc"><span class="sh s">Pontos Fortes</span>";
-  for(var i=0;i<p.st.length;i++)h+="<div class="si"><span class="sd" style="background:#2ABCAA"></span>"+p.st[i]+"</div>";
-  h+="</div><div class="sc"><span class="sh h">Sombras a Conhecer</span>";
-  for(var i=0;i<p.sh.length;i++)h+="<div class="si"><span class="sd" style="background:#C06080"></span>"+p.sh[i]+"</div>";
+  var h="<div class=\"sc\"><span class=\"sh s\">Pontos Fortes</span>";
+  for(var i=0;i<p.st.length;i++) h+="<div class=\"si\"><span class=\"sd\" style=\"background:#2ABCAA\"></span>"+p.st[i]+"</div>";
+  h+="</div><div class=\"sc\"><span class=\"sh h\">Sombras a Conhecer</span>";
+  for(var i=0;i<p.sh.length;i++) h+="<div class=\"si\"><span class=\"sd\" style=\"background:#C06080\"></span>"+p.sh[i]+"</div>";
   h+="</div>";
   document.getElementById("SS").innerHTML=h;
   var gs=["NT","NF","SJ","SP"];
-  for(var i=0;i<gs.length;i++){var el=document.getElementById("G"+gs[i]);if(el)el.className="gr"+(gs[i]===p.g?" hl":"");}
+  for(var i=0;i<gs.length;i++){
+    var el=document.getElementById("G"+gs[i]);
+    if(el) el.className="gr"+(gs[i]===p.g?" hl":"");
+  }
   document.getElementById("PF").style.width="100%";
   document.getElementById("PL").innerHTML="Concluido!";
   document.getElementById("PT").innerHTML=code;
-  pg(2);
+  showPage(2);
 }
 
-function waShare(){
-  if(!rc)return;var p=P[rc];
+function doShare(){
+  if(!rc) return;
+  var p=P[rc];
   var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel3.html";
-  var t="Descobri minha personalidade! Tipo: "+rc+" — "+p.nm+". "+p.wi+" Faca o teste: "+url+" #BurroEsforcado";
+  var t="Descobri minha personalidade! Tipo: "+rc+" - "+p.nm+". "+p.wi+" Faca o teste: "+url+" #BurroEsforcado";
   window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
 }
 
-function cpResult(){
-  if(!rc)return;var p=P[rc];
+function doCopy(){
+  if(!rc) return;
+  var p=P[rc];
   var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel3.html";
-  var t="Canal Burro Esforcado — Tipo: "+rc+" — "+p.nm+". "+p.wi+" Link: "+url;
-  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){tz("Copiado!");});}
-  else{var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0;top:0;left:0";document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand("copy");tz("Copiado!");}catch(e){}document.body.removeChild(ta);}
+  var t="Canal Burro Esforcado | Tipo: "+rc+" | "+p.nm+"\n"+p.wi+"\nLink: "+url;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(t).then(function(){showToast("Copiado!");});
+  } else {
+    var ta=document.createElement("textarea");
+    ta.value=t;
+    ta.style.cssText="position:fixed;opacity:0;top:0;left:0";
+    document.body.appendChild(ta);
+    ta.focus();ta.select();
+    try{document.execCommand("copy");showToast("Copiado!");}catch(e){}
+    document.body.removeChild(ta);
+  }
 }
 
-function tz(m){var t=document.getElementById("tz");t.innerHTML=m;t.className="on";setTimeout(function(){t.className="";},2200);}
+function showToast(m){
+  var t=document.getElementById("tz");
+  t.innerHTML=m;t.className="on";
+  setTimeout(function(){t.className="";},2200);
+}
 
 document.getElementById("b0").addEventListener("click",startQ);
-document.getElementById("NB").addEventListener("click",nxt);
-document.getElementById("BWA").addEventListener("click",waShare);
-document.getElementById("BCP").addEventListener("click",cpResult);
-document.getElementById("BRE").addEventListener("click",function(){ans=[];cur=0;rc="";scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};pg(0);});
-
+document.getElementById("NB").addEventListener("click",nextQ);
+document.getElementById("BWA").addEventListener("click",doShare);
+document.getElementById("BCP").addEventListener("click",doCopy);
+document.getElementById("BRE").addEventListener("click",function(){
+  ans=[];cur=0;rc="";
+  scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+  showPage(0);
+});
 </script>
 </body>
 </html>
