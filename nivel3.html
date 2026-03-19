@@ -158,6 +158,7 @@ button[disabled]{opacity:.3}
     <button class="sb scp" id="BCP">Copiar</button>
   </div>
   <button class="ghost" id="BRE">&#8617; Refazer o Teste</button>
+  <a href="index.html" style="display:block;text-align:center;font-family:sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(168,180,196,.5);text-decoration:none;padding:12px 0;margin-top:4px">&#8592; Escolher Outro Nivel</a>
   <div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria</div>
 </div>
 <script>
@@ -310,14 +311,14 @@ function res(){
 
 function waShare(){
   if(!rc)return;var p=P[rc];
-  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/";
+  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel3.html";
   var t="Descobri minha personalidade! Tipo: "+rc+" — "+p.nm+". "+p.wi+" Faca o teste: "+url+" #BurroEsforcado";
   window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
 }
 
 function cpResult(){
   if(!rc)return;var p=P[rc];
-  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/";
+  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel3.html";
   var t="Canal Burro Esforcado — Tipo: "+rc+" — "+p.nm+". "+p.wi+" Link: "+url;
   if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){tz("Copiado!");});}
   else{var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0;top:0;left:0";document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand("copy");tz("Copiado!");}catch(e){}document.body.removeChild(ta);}

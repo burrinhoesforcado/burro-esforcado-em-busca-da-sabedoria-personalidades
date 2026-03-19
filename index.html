@@ -2,107 +2,337 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="theme-color" content="#050510">
-<title>Mapa do Autoconhecimento - Burro Esforcado</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Personalidade - Burro Esforcado</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#050510;color:#EDE5D8;font-family:Georgia,serif;min-height:100vh;padding:40px 18px 60px;display:flex;flex-direction:column;align-items:center}
-.logo{font-family:sans-serif;font-size:11px;letter-spacing:5px;color:#C8A84B;text-transform:uppercase;margin-bottom:20px;text-align:center}
-h1{font-size:30px;font-weight:900;color:#F5EFE8;text-align:center;line-height:1.15;margin-bottom:6px}
+body{background:#050510;color:#EDE5D8;font-family:Georgia,serif;min-height:100vh}
+#p0,#p1,#p2{background:#050510;display:none;min-height:100vh;padding:30px 18px 50px}
+#p0{background:linear-gradient(160deg,#0a0a1a,#050510);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#p1{background:#050510;display:none;flex-direction:column}
+#p2{background:#050510;display:none}
+h1{font-size:34px;font-weight:900;color:#F5EFE8;margin-bottom:8px;line-height:1.1}
 h1 em{font-style:italic;color:#E8CC60}
-.rule{width:90px;height:1px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:14px auto}
-.intro{font-size:15px;font-style:italic;color:#A0B0C0;line-height:1.65;text-align:center;max-width:360px;margin-bottom:10px}
-.cite{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.22);border-radius:10px;padding:13px 15px;font-size:13px;font-style:italic;color:#E8CC60;line-height:1.65;margin-bottom:32px;text-align:center;max-width:360px}
-.cards{display:flex;flex-direction:column;gap:14px;width:100%;max-width:420px}
-.card{border-radius:14px;overflow:hidden;border:1px solid rgba(200,168,75,.2);background:rgba(255,255,255,.03);text-decoration:none;display:block;transition:transform .18s}
-.card:active{transform:scale(.98)}
-.card-head{padding:16px 18px 12px;border-bottom:1px solid rgba(200,168,75,.1)}
-.card-badge{font-family:sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:10px;font-weight:700}
-.c1 .card-badge{background:rgba(200,168,75,.15);color:#E8CC60;border:1px solid rgba(200,168,75,.3)}
-.c2 .card-badge{background:rgba(42,188,170,.15);color:#2ABCAA;border:1px solid rgba(42,188,170,.3)}
-.c3 .card-badge{background:rgba(144,96,200,.15);color:#9060C8;border:1px solid rgba(144,96,200,.3)}
-.card-title{font-size:18px;font-weight:900;color:#F5EFE8;margin-bottom:4px;font-family:Georgia,serif}
-.card-sub{font-size:13px;font-style:italic;color:#A0B0C0;line-height:1.5}
-.card-body{padding:12px 18px 16px}
-.card-stats{display:flex;gap:10px;margin-bottom:10px}
-.stat{font-family:sans-serif;font-size:10px;letter-spacing:1px;color:#A0B0C0;background:rgba(255,255,255,.04);padding:5px 10px;border-radius:20px}
-.card-desc{font-size:13px;color:#A0B0C0;line-height:1.6;font-style:italic;margin-bottom:14px}
-.card-btn{display:block;text-align:center;font-family:sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 20px;border-radius:11px;text-decoration:none}
-.c1 .card-btn{background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);color:#050505}
-.c2 .card-btn{background:linear-gradient(135deg,#1A9080,#2ABCAA);color:#030a09}
-.c3 .card-btn{background:linear-gradient(135deg,#3A1880,#9060C8);color:#fff}
-.tip{font-family:sans-serif;font-size:11px;color:rgba(168,180,196,.4);text-align:center;max-width:360px;margin-top:28px;line-height:1.6;letter-spacing:.5px}
-.ft{font-family:sans-serif;font-size:10px;letter-spacing:2px;color:rgba(168,180,196,.28);text-transform:uppercase;text-align:center;margin-top:32px;border-top:1px solid rgba(200,168,75,.06);padding-top:20px;width:100%;max-width:420px}
+.gold{color:#C8A84B}
+.rule{width:90px;height:1px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:12px auto}
+.sub{font-size:15px;font-style:italic;color:#A0B0C0;line-height:1.6;margin-bottom:14px}
+.cite{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.25);border-radius:10px;padding:13px 15px;font-size:14px;font-style:italic;color:#E8CC60;line-height:1.6;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
+.tag{font-family:sans-serif;font-size:11px;color:#C8A84B;border:1px solid rgba(200,168,75,.3);padding:5px 12px;border-radius:20px;background:rgba(200,168,75,.08)}
+button{display:block;width:100%;font-family:sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#050505;background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);border:none;border-radius:13px;padding:16px 20px;cursor:pointer;-webkit-appearance:none}
+button:active{opacity:.8}
+button[disabled]{opacity:.3}
+#NB{transition:all .3s}
+#NB:not([disabled]){background:linear-gradient(135deg,#1A9080,#2ABCAA,#4ADCCA);color:#030a09;animation:pulse .8s ease-in-out 1}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ghost{background:none;color:#A0B0C0;border:1px solid rgba(200,168,75,.2);margin-top:10px}
+.ghost:active{background:rgba(200,168,75,.08)}
+.sticky{position:sticky;top:0;background:rgba(5,5,16,.97);padding:10px 16px 8px;border-bottom:1px solid rgba(200,168,75,.1);z-index:10}
+.row{display:flex;justify-content:space-between;margin-bottom:5px}
+.lab{font-family:sans-serif;font-size:10px;letter-spacing:2px;color:#A0B0C0;text-transform:uppercase}
+.cod{font-family:sans-serif;font-size:11px;color:#C8A84B;font-weight:700}
+.bar{height:3px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(to right,#7A6218,#C8A84B);transition:width .4s}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:7px}
+.dot{width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(200,168,75,.18);display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:9px;color:rgba(200,168,75,.3);font-weight:700}
+.dot.ok{border-color:#C8A84B;color:#E8CC60;background:rgba(200,168,75,.12)}
+.qw{flex:1;padding:14px 16px;overflow-y:auto}
+.qbot{padding:8px 16px 40px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.18);border-radius:13px;overflow:hidden;margin-bottom:12px}
+.card.ans{border-color:rgba(200,168,75,.5)}
+.qh{padding:12px 14px 8px;border-bottom:1px solid rgba(200,168,75,.08)}
+.qr{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.qn{font-size:22px;font-weight:900;color:rgba(200,168,75,.25);line-height:1;font-family:Georgia,serif}
+.card.ans .qn{color:#C8A84B}
+.qax{font-family:sans-serif;font-size:9px;letter-spacing:3px;color:#A0B0C0;text-transform:uppercase}
+.qbd{margin-left:auto;font-family:sans-serif;font-size:10px;padding:3px 8px;border-radius:20px;color:transparent;border:1px solid transparent}
+.card.ans .qbd{color:#E8CC60;border-color:rgba(200,168,75,.28);background:rgba(200,168,75,.1)}
+.qt{font-size:15px;font-weight:700;color:#F5EFE8;line-height:1.4;font-family:Georgia,serif}
+.opts{display:flex;flex-direction:column}
+.opt{position:relative;padding:13px 13px 13px 36px;border-top:1px solid rgba(200,168,75,.07);cursor:pointer}
+.opt:first-child{border-top:none}
+.opt.sel{background:rgba(200,168,75,.09)}
+.opt::before{content:"";position:absolute;left:11px;top:14px;width:13px;height:13px;border-radius:50%;border:1.5px solid rgba(200,168,75,.28)}
+.opt.sel::before{background:#C8A84B;border-color:#C8A84B}
+.otg{font-family:sans-serif;font-size:9px;letter-spacing:2px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:3px}
+.opt.sel .otg{color:#E8CC60}
+.ott{font-size:14px;font-weight:700;color:#EDE5D8;display:block;margin-bottom:2px;font-family:Georgia,serif}
+.opt.sel .ott{color:#F5EFE8}
+.odd{font-size:13px;color:#A0B0C0;line-height:1.5;font-style:italic;margin:0}
+.opt.sel .odd{color:#EDE5D8}
+.tyc{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.3);border-radius:13px;padding:22px 16px 18px;text-align:center;margin-bottom:12px;position:relative}
+.tyc::before{content:"";position:absolute;top:0;left:20%;right:20%;height:3px;background:linear-gradient(to right,transparent,#C8A84B,transparent);border-radius:2px}
+.re{font-family:sans-serif;font-size:10px;letter-spacing:4px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:8px}
+.rc{font-size:54px;font-weight:900;color:#F5EFE8;letter-spacing:5px;line-height:1;font-family:Georgia,serif;margin-bottom:4px}
+.rn{font-size:19px;font-style:italic;color:#E8CC60;font-family:Georgia,serif;display:block;margin-bottom:5px}
+.rg{display:inline-block;font-family:sans-serif;font-size:10px;letter-spacing:2px;padding:4px 12px;border:1px solid rgba(200,168,75,.28);color:#C8A84B;border-radius:20px;background:rgba(200,168,75,.08);margin-bottom:14px}
+.rd{font-size:14px;color:#EDE5D8;line-height:1.7;margin-bottom:12px}
+.rw{font-style:italic;color:#E8CC60;font-size:13px;border-top:1px solid rgba(200,168,75,.2);padding-top:12px;line-height:1.6;display:block}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.pill{background:rgba(255,255,255,.03);border:1px solid rgba(200,168,75,.12);border-radius:10px;padding:10px 8px;text-align:center}
+.pi{font-size:18px;display:block;margin-bottom:3px}
+.pl{font-family:sans-serif;font-size:9px;letter-spacing:2px;color:#A0B0C0;text-transform:uppercase;display:block;margin-bottom:2px}
+.pv{font-size:13px;font-weight:700;color:#EDE5D8;display:block;font-family:Georgia,serif}
+.sss{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.sc{background:rgba(255,255,255,.03);border-radius:11px;overflow:hidden}
+.sh{padding:9px 13px 5px;font-size:14px;font-weight:700;display:block;font-family:Georgia,serif}
+.sh.s{color:#2ABCAA}.sh.h{color:#C06080}
+.si{padding:5px 13px;border-top:1px solid rgba(255,255,255,.04);font-size:12px;color:#EDE5D8;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
+.sd{flex-shrink:0;margin-top:4px;width:5px;height:5px;border-radius:50%;display:inline-block}
+.gt{font-size:16px;font-weight:700;color:#F5EFE8;margin-bottom:8px;text-align:center;font-family:Georgia,serif;display:block}
+.gr{display:flex;align-items:flex-start;gap:9px;background:rgba(255,255,255,.03);border:1px solid rgba(200,168,75,.08);border-radius:10px;padding:11px;margin-bottom:7px;position:relative;overflow:hidden}
+.gr.hl{background:rgba(200,168,75,.08);border-color:rgba(200,168,75,.3)}
+.gr.hl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
+.gr[data-g="NT"].hl::before{background:#2ABCAA}
+.gr[data-g="NF"].hl::before{background:#9060C8}
+.gr[data-g="SJ"].hl::before{background:#D09030}
+.gr[data-g="SP"].hl::before{background:#C06080}
+.gi{font-size:20px;flex-shrink:0}
+.gn{font-size:13px;font-weight:700;color:#F5EFE8;display:block;font-family:Georgia,serif}
+.gty{font-family:sans-serif;font-size:8px;letter-spacing:1px;color:#C8A84B;margin:2px 0 3px;display:block}
+.gd{font-size:12px;color:#A0B0C0;font-style:italic;margin:0}
+.gr.hl .gd{color:#EDE5D8}
+.av{background:rgba(200,168,75,.08);border:1px solid rgba(200,168,75,.25);border-left:3px solid #C8A84B;border-radius:10px;padding:12px 11px;margin-bottom:14px}
+.avt{font-family:sans-serif;font-size:9px;letter-spacing:3px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:5px}
+.avx{font-size:12px;color:#EDE5D8;line-height:1.6;font-style:italic;margin:0}
+.shr{display:flex;gap:8px;margin-bottom:8px}
+.sb{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:12px 6px;border-radius:10px;border:none;cursor:pointer;font-family:sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;-webkit-appearance:none}
+.sb:active{opacity:.8}
+.swa{background:#25D366;color:#fff}
+.scp{background:rgba(200,168,75,.15);color:#E8CC60;border:1px solid rgba(200,168,75,.28)}
+.ft{text-align:center;padding:14px 0 0;font-family:sans-serif;font-size:10px;letter-spacing:2px;color:rgba(168,180,196,.3);text-transform:uppercase;border-top:1px solid rgba(200,168,75,.06);margin-top:12px}
 .ft b{color:#C8A84B;font-weight:normal}
+#tz{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(18px);background:rgba(8,8,24,.97);border:1px solid rgba(200,168,75,.28);border-radius:20px;padding:8px 16px;font-family:sans-serif;font-size:11px;color:#E8CC60;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:9999}
+#tz.on{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
 
-<p class="logo">&#129442; Canal Burro Esforcado</p>
-<h1>O Mapa do<br><em>Autoconhecimento</em></h1>
-<div class="rule"></div>
-<p class="intro">Escolha o nivel de profundidade que preferir. Quanto mais perguntas, mais preciso e o seu resultado.</p>
-<p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses." &#8212; Socrates</p>
+<div id="tz"></div>
 
-<div class="cards">
-
-  <a class="card c1" href="index.html">
-    <div class="card-head">
-      <span class="card-badge">NIVEL 1 — RAPIDO</span>
-      <div class="card-title">Descoberta Inicial</div>
-      <div class="card-sub">Uma pergunta por dimensao — ideal para uma primeira impressao.</div>
-    </div>
-    <div class="card-body">
-      <div class="card-stats">
-        <span class="stat">4 Perguntas</span>
-        <span class="stat">&#8764; 2 Minutos</span>
-        <span class="stat">16 Perfis</span>
-      </div>
-      <p class="card-desc">Perfeito para quem quer uma visao geral rapida. Excelente ponto de partida para quem nunca fez um teste de personalidade.</p>
-      <span class="card-btn">Comecar o Nivel 1</span>
-    </div>
-  </a>
-
-  <a class="card c2" href="nivel2.html">
-    <div class="card-head">
-      <span class="card-badge">NIVEL 2 — INTERMEDIARIO</span>
-      <div class="card-title">Mapa Aprofundado</div>
-      <div class="card-sub">Duas a tres perguntas por dimensao — resultado mais preciso.</div>
-    </div>
-    <div class="card-body">
-      <div class="card-stats">
-        <span class="stat">10 Perguntas</span>
-        <span class="stat">&#8764; 5 Minutos</span>
-        <span class="stat">16 Perfis</span>
-      </div>
-      <p class="card-desc">Recomendado para quem quer confirmar um resultado anterior ou busca uma analise mais confiavel com perguntas de diferentes angulos.</p>
-      <span class="card-btn">Comecar o Nivel 2</span>
-    </div>
-  </a>
-
-  <a class="card c3" href="nivel3.html">
-    <div class="card-head">
-      <span class="card-badge">NIVEL 3 — AVANCADO</span>
-      <div class="card-title">Perfil Completo</div>
-      <div class="card-sub">Cinco perguntas por dimensao — o resultado mais preciso possivel.</div>
-    </div>
-    <div class="card-body">
-      <div class="card-stats">
-        <span class="stat">20 Perguntas</span>
-        <span class="stat">&#8764; 12 Minutos</span>
-        <span class="stat">16 Perfis</span>
-      </div>
-      <p class="card-desc">Para quem quer o maior nivel de precisao. Cada dimensao e explorada em profundidade com situacoes concretas e variacoes de contexto.</p>
-      <span class="card-btn">Comecar o Nivel 3</span>
-    </div>
-  </a>
-
+<div id="p0">
+  <p style="font-family:sans-serif;font-size:11px;letter-spacing:5px;color:#C8A84B;text-transform:uppercase;margin-bottom:16px">Canal Burro Esforcado</p>
+  <h1>O Mapa do<br><em>Autoconhecimento</em></h1>
+  <div class="rule"></div>
+  <p class="sub">Descubra sua personalidade e inicie sua jornada em busca da sabedoria.</p>
+  <p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses."<br>&#8212; Socrates</p>
+  <div class="tags">
+    <span class="tag">4 Perguntas</span>
+    <span class="tag">16 Perfis</span>
+    <span class="tag">2 Minutos</span>
+  </div>
+  <button id="b0">Descobrir Minha Personalidade</button>
 </div>
 
-<p class="tip">Sugestao: comece pelo Nivel 1 e use o Nivel 2 ou 3 para confirmar e aprofundar o resultado.</p>
+<div id="p1" style="display:none">
+  <div class="sticky">
+    <div class="row"><span class="lab" id="PL">Pergunta 1 de 4</span><span class="cod" id="PT"></span></div>
+    <div class="bar"><div class="fill" id="PF" style="width:0%"></div></div>
+    <div class="dots">
+      <div class="dot" id="D0">E-I</div>
+      <div class="dot" id="D1">S-N</div>
+      <div class="dot" id="D2">T-F</div>
+      <div class="dot" id="D3">J-P</div>
+    </div>
+  </div>
+  <div class="qw" id="QB"></div>
+  <div class="qbot">
+    <button id="NB" disabled>Proxima Pergunta  &#8594;</button>
+  </div>
+</div>
 
-<div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria &middot; Devagar e Sempre</div>
+<div id="p2" style="display:none">
+  <div class="tyc">
+    <span class="re">Sua Personalidade</span>
+    <div class="rc" id="RC">?</div>
+    <span class="rn" id="RN"></span>
+    <span class="rg" id="RG"></span>
+    <p class="rd" id="RD"></p>
+    <span class="rw" id="RW"></span>
+  </div>
+  <div class="pills" id="DP"></div>
+  <div class="sss" id="SS"></div>
+  <div style="margin-bottom:12px">
+    <span class="gt">Os 4 Grupos de Caminhada</span>
+    <div class="gr" data-g="NT" id="GNT"><span class="gi">&#128301;</span><div><span class="gn">Analistas</span><span class="gty">INTJ INTP ENTJ ENTP</span><p class="gd">Sabedoria Logica</p></div></div>
+    <div class="gr" data-g="NF" id="GNF"><span class="gi">&#127807;</span><div><span class="gn">Diplomatas</span><span class="gty">INFJ INFP ENFJ ENFP</span><p class="gd">Sabedoria da Alma</p></div></div>
+    <div class="gr" data-g="SJ" id="GSJ"><span class="gi">&#128306;</span><div><span class="gn">Sentinelas</span><span class="gty">ISTJ ISFJ ESTJ ESFJ</span><p class="gd">Sabedoria do Dever</p></div></div>
+    <div class="gr" data-g="SP" id="GSP"><span class="gi">&#9889;</span><div><span class="gn">Exploradores</span><span class="gty">ISTP ISFP ESTP ESFP</span><p class="gd">Sabedoria da Acao</p></div></div>
+  </div>
+  <div class="av">
+    <span class="avt">Aviso do Burro Esforcado</span>
+    <p class="avx">Este e um mapa, nao uma caixa. Devagar e sempre, tijolo por tijolo.</p>
+  </div>
+  <div class="shr">
+    <button class="sb swa" id="BWA">WhatsApp</button>
+    <button class="sb scp" id="BCP">Copiar</button>
+  </div>
+  <button class="ghost" id="BRE">&#8617; Refazer o Teste</button>
+  <a href="index.html" style="display:block;text-align:center;font-family:sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(168,180,196,.5);text-decoration:none;padding:12px 0;margin-top:4px">&#8592; Escolher Outro Nivel</a>
+  <div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria</div>
+</div>
 
+<script>
+var Q=[
+  {id:"EI",b:"E / I",ax:"Eixo 1 — Energia",
+   q:"Apos um dia longo e intenso, o que mais te recupera e te devolve energia?",
+   a:{s:"E",t:"Opcao A — Extrovertido",ti:"Extrovertido (E)",
+      d:"Preciso de pessoas ao redor. Sair, conversar, estar em grupo me recarrega. O silencio e o isolamento me pesam — o mundo exterior e minha fonte de energia."},
+   b:{s:"I",t:"Opcao B — Introvertido",ti:"Introvertido (I)",
+      d:"Preciso de silencio e solidao. Um tempo so comigo — lendo, pensando, descansando longe de estimulos — e o que realmente me restaura. Pessoas em excesso me esgotam."}},
+  {id:"SN",b:"S / N",ax:"Eixo 2 — Percepcao",
+   q:"Quando voce aprende algo novo, o que mais captura sua atencao e te motiva?",
+   a:{s:"S",t:"Opcao A — Observador",ti:"Observador (S)",
+      d:"O que e concreto, pratico e verificavel. Quero saber como funciona na realidade, exemplos reais, passos claros. Prefiro o que posso ver, tocar e aplicar agora."},
+   b:{s:"N",t:"Opcao B — Intuitivo",ti:"Intuitivo (N)",
+      d:"Os padroes escondidos, as conexoes entre ideias e as possibilidades futuras. Gosto de pensar no que aquilo pode se tornar, no significado mais profundo por tras dos fatos."}},
+  {id:"TF",b:"T / F",ax:"Eixo 3 — Decisao",
+   q:"Numa decisao dificil que afeta outras pessoas, o que voce prioriza naturalmente?",
+   a:{s:"T",t:"Opcao A — Racional",ti:"Racional (T)",
+      d:"A logica, a coerencia e o que e mais justo e eficiente — mesmo que a decisao seja dura ou impopular. Acredito que ser honesto e direto e mais respeitoso do que poupar sentimentos."},
+   b:{s:"F",t:"Opcao B — Sentimental",ti:"Sentimental (F)",
+      d:"Os valores, o impacto humano e como cada pessoa envolvida vai se sentir. Para mim, uma decisao que magoa desnecessariamente nao pode ser a certa — harmonia e autenticidade importam."}},
+  {id:"JP",b:"J / P",ax:"Eixo 4 — Estilo de Vida",
+   q:"Como voce se sente mais confortavel para lidar com sua rotina e seus projetos?",
+   a:{s:"J",t:"Opcao A — Planejador",ti:"Planejador (J)",
+      d:"Com planos definidos, prazos claros e uma estrutura organizada. Saber o que vem a seguir me da seguranca e liberdade mental. Imprevistos e bagunca me causam desconforto."},
+   b:{s:"P",t:"Opcao B — Adaptavel",ti:"Adaptavel (P)",
+      d:"Com flexibilidade e abertura para o que surgir. Prefiro manter as opcoes em aberto e me adaptar ao momento. Regras rigidas e cronogramas fechados me sufocam e travam minha criatividade."}}
+];
+var P={
+  INTJ:{nm:"O Arquiteto",g:"NT",gn:"Analistas",ds:"Estrategista visionario e independente. Combina imaginacao com determinacao implacavel.",wi:"Sua sabedoria nasce na reflexao profunda. Aprenda a confiar nas pessoas.",st:["Pensamento estrategico","Alta determinacao","Mente analitica"],sh:["Excessivamente critico","Tendencia ao isolamento","Dificuldade com emocoes"]},
+  INTP:{nm:"O Logico",g:"NT",gn:"Analistas",ds:"Pensador inovador com sede de conhecimento. Busca padroes ocultos em tudo.",wi:"Sua riqueza esta nas ideias. Uma acao concreta vale mais que mil teorias.",st:["Raciocinio analitico","Pensamento original","Humildade intelectual"],sh:["Procrastinacao","Paralisia pela analise","Dificuldade com compromissos"]},
+  ENTJ:{nm:"O Comandante",g:"NT",gn:"Analistas",ds:"Lider nato, ousado e incisivo. Transforma visoes em planos concretos.",wi:"Voce sabe liderar. O proximo nivel e aprender a servir.",st:["Visao estrategica","Confianca sob pressao","Mobiliza equipes"],sh:["Atropela sentimentos","Impaciencia","Workaholismo"]},
+  ENTP:{nm:"O Inovador",g:"NT",gn:"Analistas",ds:"Pensador rapido e criativo. Adora desafiar ideias estabelecidas.",wi:"Sua mente e um fogo de artificio. Aprenda a pousar.",st:["Pensamento agil","Carisma","Questiona o status quo"],sh:["Nao conclui projetos","Debate para evitar acao","Subestima consistencia"]},
+  INFJ:{nm:"O Conselheiro",g:"NF",gn:"Diplomatas",ds:"O mais raro dos tipos. Idealista com visao profunda da natureza humana.",wi:"Voce carrega o peso do mundo. Cuide de si tambem.",st:["Intuicao profunda","Empatia com integridade","Comprometimento"],sh:["Esgotamento","Dificuldade com limites","Perfeccionismo"]},
+  INFP:{nm:"O Mediador",g:"NF",gn:"Diplomatas",ds:"Sonhador poetico guiado por valores profundos.",wi:"Sua riqueza esta nos valores. Transforme-os em presenca.",st:["Autenticidade","Comprometimento","Empatia criativa"],sh:["Hipersensibilidade","Idealismo paralisante","Procrastinacao"]},
+  ENFJ:{nm:"O Protagonista",g:"NF",gn:"Diplomatas",ds:"Lider carismatico que ajuda outros a florescerem.",wi:"Voce ilumina os outros. Alimente tambem sua propria chama.",st:["Lideranca por valores","Empatia ativa","Comunicacao poderosa"],sh:["Negligencia a si","Hipersensibilidade","Assume demais"]},
+  ENFP:{nm:"O Entusiasta",g:"NF",gn:"Diplomatas",ds:"Espirito livre e criativo, transbordando entusiasmo.",wi:"Sua alegria e um dom. Canalize-a com foco.",st:["Criatividade","Entusiasmo","Adaptabilidade"],sh:["Dificuldade de foco","Sensibilidade","Fuga de responsabilidades"]},
+  ISTJ:{nm:"O Inspetor",g:"SJ",gn:"Sentinelas",ds:"A pedra angular de qualquer estrutura. Responsavel e meticuloso.",wi:"Sua confiabilidade e rara. Abrace a mudanca.",st:["Confiabilidade","Atencao a detalhes","Disciplina"],sh:["Resistencia a mudanca","Rigidez","Dificuldade de se abrir"]},
+  ISFJ:{nm:"O Defensor",g:"SJ",gn:"Sentinelas",ds:"Protetor dedicado com devocao silenciosa.",wi:"Seu cuidado constroi mundos. Aprenda a pedir ajuda.",st:["Cuidado genuino","Lealdade","Cria ambientes seguros"],sh:["Sem limites","Acumula ressentimentos","Suprime necessidades"]},
+  ESTJ:{nm:"O Supervisor",g:"SJ",gn:"Sentinelas",ds:"Organizador excelente com principios claros.",wi:"Sua forca esta na estrutura. Questione as regras quando preciso.",st:["Lideranca pratica","Clareza","Dedicacao"],sh:["Rigidez","Dificuldade com diferente","Suprime emocoes"]},
+  ESFJ:{nm:"O Provedor",g:"SJ",gn:"Sentinelas",ds:"Cuidador generoso que harmoniza grupos.",wi:"Voce nutre o mundo. Nutra tambem seus sonhos.",st:["Generosidade","Une grupos","Memoria social"],sh:["Necessidade de aprovacao","Evita conflitos","Perde identidade servindo"]},
+  ISTP:{nm:"O Virtuoso",g:"SP",gn:"Exploradores",ds:"Observador calmo que explora como o mundo funciona.",wi:"Aprende fazendo. Deixe as pessoas verem o que esta dentro.",st:["Resolve problemas","Calma em crises","Independencia"],sh:["Nao comunica sentimentos","Parece distante","Isolamento"]},
+  ISFP:{nm:"O Aventureiro",g:"SP",gn:"Exploradores",ds:"Artista quieto com senso estetico profundo.",wi:"Sua beleza interior e real. Deixe-a visivel.",st:["Autenticidade","Presenca plena","Empatia silenciosa"],sh:["Dificuldade de planejar","Evita conflitos","Hipersensibilidade"]},
+  ESTP:{nm:"O Empreendedor",g:"SP",gn:"Exploradores",ds:"Energico e perceptivo, aprende na acao.",wi:"Sua coragem e impressionante. Aprenda a parar e sentir.",st:["Carisma","Decisao rapida","Coragem"],sh:["Age sem pensar","Tedio em rotina","Pode ser insensivel"]},
+  ESFP:{nm:"O Animador",g:"SP",gn:"Exploradores",ds:"Espontaneo e generoso, ama a vida com intensidade.",wi:"Sua alegria transforma. Os momentos quietos tambem tem beleza.",st:["Entusiasmo genuino","Generosidade","Plenitude no presente"],sh:["Dificuldade de planejar","Evita assuntos serios","Falta de foco"]}
+};
+
+var ans=[null,null,null,null];
+var cur=0;
+var rc="";
+
+function pg(n){
+  document.getElementById("p0").style.display=n===0?"flex":"none";
+  document.getElementById("p1").style.display=n===1?"flex":"none";
+  document.getElementById("p2").style.display=n===2?"block":"none";
+  window.scrollTo(0,0);
+}
+
+function startQ(){
+  ans=[null,null,null,null];cur=0;rc="";
+  for(var i=0;i<4;i++){var d=document.getElementById("D"+i);if(d){d.className="dot";d.innerHTML=Q[i].id;}}
+  document.getElementById("NB").disabled=true;
+  document.getElementById("NB").innerHTML="Proxima Pergunta  \u2192";
+  document.getElementById("PF").style.width="0%";
+  document.getElementById("PT").innerHTML="";
+  drawQ(0);pg(1);
+}
+
+function drawQ(i){
+  var q=Q[i];
+  var h="<div class=\"card"+(ans[i]!==null?" ans":"")+"\" id=\"QC\">";
+  h+="<div class=\"qh\"><div class=\"qr\">";
+  h+="<span class=\"qn\">"+(i+1)+"</span>";
+  h+="<span class=\"qax\">"+q.ax+"</span>";
+  h+="<span class=\"qbd\" id=\"QBDG\">"+(ans[i]!==null?ans[i]:q.b)+"</span>";
+  h+="</div><div class=\"qt\">"+q.q+"</div></div>";
+  h+="<div class=\"opts\">";
+  h+="<div class=\"opt"+(ans[i]===q.a.s?" sel":"")+"\" id=\"OA\" onclick=\"pick("+i+",\'"+q.a.s+"\')\"><span class=\"otg\">"+q.a.t+"</span><span class=\"ott\">"+q.a.ti+"</span><p class=\"odd\">"+q.a.d+"</p></div>";
+  h+="<div class=\"opt"+(ans[i]===q.b.s?" sel":"")+"\" id=\"OB\" onclick=\"pick("+i+",\'"+q.b.s+"\')\"><span class=\"otg\">"+q.b.t+"</span><span class=\"ott\">"+q.b.ti+"</span><p class=\"odd\">"+q.b.d+"</p></div>";
+  h+="</div></div>";
+  document.getElementById("QB").innerHTML=h;
+  upd(i);
+}
+
+function pick(i,s){
+  ans[i]=s;
+  var c=document.getElementById("QC");if(c)c.className="card ans";
+  var b=document.getElementById("QBDG");
+  if(b){b.innerHTML=s;b.style.color="#E8CC60";b.style.borderColor="rgba(200,168,75,.28)";b.style.background="rgba(200,168,75,.1)";}
+  var q=Q[i];
+  var oa=document.getElementById("OA");var ob=document.getElementById("OB");
+  if(oa)oa.className="opt"+(s===q.a.s?" sel":"");
+  if(ob)ob.className="opt"+(s===q.b.s?" sel":"");
+  var dt=document.getElementById("D"+i);if(dt){dt.className="dot ok";dt.innerHTML=s;}
+  var nb=document.getElementById("NB");
+  if(nb){nb.disabled=false;nb.innerHTML=i<3?"Proxima":"Ver Resultado";}
+  upd(i);
+}
+
+function upd(i){
+  var p="";for(var k=0;k<i;k++)if(ans[k])p+=ans[k];
+  document.getElementById("PL").innerHTML="Pergunta "+(i+1)+" de 4";
+  document.getElementById("PT").innerHTML=p;
+  document.getElementById("PF").style.width=((i/4)*100)+"%";
+}
+
+function nxt(){
+  if(ans[cur]===null)return;
+  cur++;if(cur>=4){res();return;}
+  document.getElementById("NB").disabled=true;
+  document.getElementById("NB").innerHTML="Proxima Pergunta  \u2192";
+  drawQ(cur);
+}
+
+function res(){
+  var code=ans.join("");rc=code;var p=P[code];if(!p)return;
+  document.getElementById("RC").innerHTML=code;
+  document.getElementById("RN").innerHTML=p.nm;
+  document.getElementById("RG").innerHTML="Grupo dos "+p.gn+" ("+p.g+")";
+  document.getElementById("RD").innerHTML=p.ds;
+  document.getElementById("RW").innerHTML="&#10022; "+p.wi;
+  var dn={E:"Extrovertido",I:"Introvertido",S:"Observador",N:"Intuitivo",T:"Racional",F:"Sentimental",J:"Planejador",P:"Adaptavel"};
+  var di=["&#9889;","&#128065;","&#9878;","&#128197;"];
+  var dl=["Energia","Percepcao","Decisao","Estilo"];
+  var ph="";
+  for(var i=0;i<4;i++)ph+="<div class=\"pill\"><span class=\"pi\">"+di[i]+"</span><span class=\"pl\">"+dl[i]+"</span><span class=\"pv\">"+ans[i]+" - "+dn[ans[i]]+"</span></div>";
+  document.getElementById("DP").innerHTML=ph;
+  var h="<div class=\"sc\"><span class=\"sh s\">Pontos Fortes</span>";
+  for(var i=0;i<p.st.length;i++)h+="<div class=\"si\"><span class=\"sd\" style=\"background:#2ABCAA\"></span>"+p.st[i]+"</div>";
+  h+="</div><div class=\"sc\"><span class=\"sh h\">Sombras</span>";
+  for(var i=0;i<p.sh.length;i++)h+="<div class=\"si\"><span class=\"sd\" style=\"background:#C06080\"></span>"+p.sh[i]+"</div>";
+  h+="</div>";
+  document.getElementById("SS").innerHTML=h;
+  var gs=["NT","NF","SJ","SP"];
+  for(var i=0;i<gs.length;i++){var el=document.getElementById("G"+gs[i]);if(el)el.className="gr"+(gs[i]===p.g?" hl":"");}
+  document.getElementById("PF").style.width="100%";
+  document.getElementById("PL").innerHTML="Completo!";
+  document.getElementById("PT").innerHTML=code;
+  pg(2);
+}
+
+function waShare(){
+  if(!rc)return;var p=P[rc];
+  var t="Descobri minha personalidade! Tipo: "+rc+" - "+p.nm+". "+p.wi+" Faca o teste: https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel1.html #BurroEsforcado";
+  window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
+}
+
+function cpResult(){
+  if(!rc)return;var p=P[rc];
+  var t="Canal Burro Esforcado - Tipo: "+rc+" - "+p.nm+". "+p.wi+" Link: https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/nivel1.html";
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){tz("Copiado!");});}
+  else{var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0;top:0;left:0";document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand("copy");tz("Copiado!");}catch(e){}document.body.removeChild(ta);}
+}
+
+function tz(m){var t=document.getElementById("tz");t.innerHTML=m;t.className="on";setTimeout(function(){t.className="";},2200);}
+
+// Attach all events here - no onclick in HTML to avoid any parsing issues
+document.getElementById("b0").addEventListener("click",startQ);
+document.getElementById("NB").addEventListener("click",nxt);
+document.getElementById("BWA").addEventListener("click",waShare);
+document.getElementById("BCP").addEventListener("click",cpResult);
+document.getElementById("BRE").addEventListener("click",function(){ans=[null,null,null,null];cur=0;rc="";pg(0);});
+</script>
 </body>
 </html>
