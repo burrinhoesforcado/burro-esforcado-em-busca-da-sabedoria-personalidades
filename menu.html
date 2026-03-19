@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#050510">
+<title>Mapa do Autoconhecimento - Burro Esforcado</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050510;color:#EDE5D8;font-family:Georgia,serif;min-height:100vh;padding:40px 18px 60px;display:flex;flex-direction:column;align-items:center}
+.logo{font-family:sans-serif;font-size:11px;letter-spacing:5px;color:#C8A84B;text-transform:uppercase;margin-bottom:20px;text-align:center}
+h1{font-size:30px;font-weight:900;color:#F5EFE8;text-align:center;line-height:1.15;margin-bottom:6px}
+h1 em{font-style:italic;color:#E8CC60}
+.rule{width:90px;height:1px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:14px auto}
+.intro{font-size:15px;font-style:italic;color:#A0B0C0;line-height:1.65;text-align:center;max-width:360px;margin-bottom:10px}
+.cite{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.22);border-radius:10px;padding:13px 15px;font-size:13px;font-style:italic;color:#E8CC60;line-height:1.65;margin-bottom:32px;text-align:center;max-width:360px}
+.cards{display:flex;flex-direction:column;gap:14px;width:100%;max-width:420px}
+.card{border-radius:14px;overflow:hidden;border:1px solid rgba(200,168,75,.2);background:rgba(255,255,255,.03);text-decoration:none;display:block;transition:transform .18s}
+.card:active{transform:scale(.98)}
+.card-head{padding:16px 18px 12px;border-bottom:1px solid rgba(200,168,75,.1)}
+.card-badge{font-family:sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;display:inline-block;padding:4px 11px;border-radius:20px;margin-bottom:10px;font-weight:700}
+.c1 .card-badge{background:rgba(200,168,75,.15);color:#E8CC60;border:1px solid rgba(200,168,75,.3)}
+.c2 .card-badge{background:rgba(42,188,170,.15);color:#2ABCAA;border:1px solid rgba(42,188,170,.3)}
+.c3 .card-badge{background:rgba(144,96,200,.15);color:#9060C8;border:1px solid rgba(144,96,200,.3)}
+.card-title{font-size:18px;font-weight:900;color:#F5EFE8;margin-bottom:4px;font-family:Georgia,serif}
+.card-sub{font-size:13px;font-style:italic;color:#A0B0C0;line-height:1.5}
+.card-body{padding:12px 18px 16px}
+.card-stats{display:flex;gap:10px;margin-bottom:10px}
+.stat{font-family:sans-serif;font-size:10px;letter-spacing:1px;color:#A0B0C0;background:rgba(255,255,255,.04);padding:5px 10px;border-radius:20px}
+.card-desc{font-size:13px;color:#A0B0C0;line-height:1.6;font-style:italic;margin-bottom:14px}
+.card-btn{display:block;text-align:center;font-family:sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 20px;border-radius:11px;text-decoration:none}
+.c1 .card-btn{background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);color:#050505}
+.c2 .card-btn{background:linear-gradient(135deg,#1A9080,#2ABCAA);color:#030a09}
+.c3 .card-btn{background:linear-gradient(135deg,#3A1880,#9060C8);color:#fff}
+.tip{font-family:sans-serif;font-size:11px;color:rgba(168,180,196,.4);text-align:center;max-width:360px;margin-top:28px;line-height:1.6;letter-spacing:.5px}
+.ft{font-family:sans-serif;font-size:10px;letter-spacing:2px;color:rgba(168,180,196,.28);text-transform:uppercase;text-align:center;margin-top:32px;border-top:1px solid rgba(200,168,75,.06);padding-top:20px;width:100%;max-width:420px}
+.ft b{color:#C8A84B;font-weight:normal}
+</style>
+</head>
+<body>
+
+<p class="logo">&#129442; Canal Burro Esforcado</p>
+<h1>O Mapa do<br><em>Autoconhecimento</em></h1>
+<div class="rule"></div>
+<p class="intro">Escolha o nivel de profundidade que preferir. Quanto mais perguntas, mais preciso e o seu resultado.</p>
+<p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses." &#8212; Socrates</p>
+
+<div class="cards">
+
+  <a class="card c1" href="index.html">
+    <div class="card-head">
+      <span class="card-badge">NIVEL 1 — RAPIDO</span>
+      <div class="card-title">Descoberta Inicial</div>
+      <div class="card-sub">Uma pergunta por dimensao — ideal para uma primeira impressao.</div>
+    </div>
+    <div class="card-body">
+      <div class="card-stats">
+        <span class="stat">4 Perguntas</span>
+        <span class="stat">&#8764; 2 Minutos</span>
+        <span class="stat">16 Perfis</span>
+      </div>
+      <p class="card-desc">Perfeito para quem quer uma visao geral rapida. Excelente ponto de partida para quem nunca fez um teste de personalidade.</p>
+      <span class="card-btn">Comecar o Nivel 1</span>
+    </div>
+  </a>
+
+  <a class="card c2" href="nivel2.html">
+    <div class="card-head">
+      <span class="card-badge">NIVEL 2 — INTERMEDIARIO</span>
+      <div class="card-title">Mapa Aprofundado</div>
+      <div class="card-sub">Duas a tres perguntas por dimensao — resultado mais preciso.</div>
+    </div>
+    <div class="card-body">
+      <div class="card-stats">
+        <span class="stat">10 Perguntas</span>
+        <span class="stat">&#8764; 5 Minutos</span>
+        <span class="stat">16 Perfis</span>
+      </div>
+      <p class="card-desc">Recomendado para quem quer confirmar um resultado anterior ou busca uma analise mais confiavel com perguntas de diferentes angulos.</p>
+      <span class="card-btn">Comecar o Nivel 2</span>
+    </div>
+  </a>
+
+  <a class="card c3" href="nivel3.html">
+    <div class="card-head">
+      <span class="card-badge">NIVEL 3 — AVANCADO</span>
+      <div class="card-title">Perfil Completo</div>
+      <div class="card-sub">Cinco perguntas por dimensao — o resultado mais preciso possivel.</div>
+    </div>
+    <div class="card-body">
+      <div class="card-stats">
+        <span class="stat">20 Perguntas</span>
+        <span class="stat">&#8764; 12 Minutos</span>
+        <span class="stat">16 Perfis</span>
+      </div>
+      <p class="card-desc">Para quem quer o maior nivel de precisao. Cada dimensao e explorada em profundidade com situacoes concretas e variacoes de contexto.</p>
+      <span class="card-btn">Comecar o Nivel 3</span>
+    </div>
+  </a>
+
+</div>
+
+<p class="tip">Sugestao: comece pelo Nivel 1 e use o Nivel 2 ou 3 para confirmar e aprofundar o resultado.</p>
+
+<div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria &middot; Devagar e Sempre</div>
+
+</body>
+</html>

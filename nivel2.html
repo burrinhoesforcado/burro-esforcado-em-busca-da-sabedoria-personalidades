@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050510">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Personalidade Nivel 2 - Burro Esforcado</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050510;color:#EDE5D8;font-family:Georgia,serif;min-height:100vh}
+#p0,#p1,#p2{min-height:100vh;padding:30px 18px 50px}
+#p0{background:linear-gradient(160deg,#0a0a1a,#050510);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#p1{background:#050510;display:none;flex-direction:column}
+#p2{background:#050510;display:none}
+h1{font-size:32px;font-weight:900;color:#F5EFE8;margin-bottom:8px;line-height:1.1}
+h1 em{font-style:italic;color:#E8CC60}
+.rule{width:90px;height:1px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:12px auto}
+.sub{font-size:15px;font-style:italic;color:#A0B0C0;line-height:1.6;margin-bottom:14px}
+.cite{background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.25);border-radius:10px;padding:13px 15px;font-size:14px;font-style:italic;color:#E8CC60;line-height:1.6;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
+.tag{font-family:sans-serif;font-size:11px;color:#C8A84B;border:1px solid rgba(200,168,75,.3);padding:5px 12px;border-radius:20px;background:rgba(200,168,75,.08)}
+.lvl{font-family:sans-serif;font-size:11px;letter-spacing:3px;color:#E8CC60;text-transform:uppercase;display:block;margin-bottom:6px;background:rgba(200,168,75,.15);padding:6px 16px;border-radius:20px;display:inline-block}
+button{display:block;width:100%;font-family:sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#050505;background:linear-gradient(135deg,#7A6218,#C8A84B,#E8CC60);border:none;border-radius:13px;padding:16px 20px;cursor:pointer;-webkit-appearance:none}
+button:active{opacity:.8}
+button[disabled]{opacity:.3}
+#NB{transition:all .3s}
+#NB:not([disabled]){background:linear-gradient(135deg,#1A9080,#2ABCAA,#4ADCCA);color:#030a09;animation:pulse .7s ease-in-out 1}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+.ghost{background:none;color:#A0B0C0;border:1px solid rgba(200,168,75,.2);margin-top:10px}
+.ghost:active{background:rgba(200,168,75,.08)}
+.sticky{position:sticky;top:0;background:rgba(5,5,16,.97);padding:10px 16px 8px;border-bottom:1px solid rgba(200,168,75,.1);z-index:10}
+.row{display:flex;justify-content:space-between;margin-bottom:5px}
+.lab{font-family:sans-serif;font-size:10px;letter-spacing:2px;color:#A0B0C0;text-transform:uppercase}
+.cod{font-family:sans-serif;font-size:11px;color:#C8A84B;font-weight:700}
+.bar{height:3px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(to right,#7A6218,#C8A84B);transition:width .4s}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:7px;flex-wrap:wrap}
+.dot{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(200,168,75,.18);display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:8px;color:rgba(200,168,75,.3);font-weight:700}
+.dot.ok{border-color:#C8A84B;color:#E8CC60;background:rgba(200,168,75,.12)}
+.qw{flex:1;padding:14px 16px;overflow-y:auto}
+.qbot{padding:8px 16px 40px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.18);border-radius:13px;overflow:hidden;margin-bottom:12px}
+.card.ans{border-color:rgba(200,168,75,.5)}
+.qh{padding:12px 14px 8px;border-bottom:1px solid rgba(200,168,75,.08)}
+.qr{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.qn{font-size:20px;font-weight:900;color:rgba(200,168,75,.25);line-height:1;font-family:Georgia,serif}
+.card.ans .qn{color:#C8A84B}
+.qax{font-family:sans-serif;font-size:8px;letter-spacing:3px;color:#A0B0C0;text-transform:uppercase}
+.qbd{margin-left:auto;font-family:sans-serif;font-size:10px;padding:3px 8px;border-radius:20px;color:transparent;border:1px solid transparent}
+.card.ans .qbd{color:#E8CC60;border-color:rgba(200,168,75,.28);background:rgba(200,168,75,.1)}
+.qt{font-size:15px;font-weight:700;color:#F5EFE8;line-height:1.4;font-family:Georgia,serif}
+.opts{display:flex;flex-direction:column}
+.opt{position:relative;padding:14px 13px 14px 38px;border-top:1px solid rgba(200,168,75,.07);cursor:pointer}
+.opt:first-child{border-top:none}
+.opt.sel{background:rgba(200,168,75,.09)}
+.opt::before{content:"";position:absolute;left:11px;top:15px;width:13px;height:13px;border-radius:50%;border:1.5px solid rgba(200,168,75,.28)}
+.opt.sel::before{background:#C8A84B;border-color:#C8A84B}
+.otg{font-family:sans-serif;font-size:9px;letter-spacing:2px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:4px}
+.opt.sel .otg{color:#E8CC60}
+.ott{font-size:14px;font-weight:700;color:#EDE5D8;display:block;margin-bottom:4px;font-family:Georgia,serif}
+.opt.sel .ott{color:#F5EFE8}
+.odd{font-size:13px;color:#A0B0C0;line-height:1.6;font-style:italic;margin:0}
+.opt.sel .odd{color:#EDE5D8}
+.tyc{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.3);border-radius:13px;padding:22px 16px 18px;text-align:center;margin-bottom:12px;position:relative}
+.tyc::before{content:"";position:absolute;top:0;left:20%;right:20%;height:3px;background:linear-gradient(to right,transparent,#C8A84B,transparent);border-radius:2px}
+.re{font-family:sans-serif;font-size:10px;letter-spacing:4px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:8px}
+.rc{font-size:52px;font-weight:900;color:#F5EFE8;letter-spacing:5px;line-height:1;font-family:Georgia,serif;margin-bottom:4px}
+.rn{font-size:18px;font-style:italic;color:#E8CC60;font-family:Georgia,serif;display:block;margin-bottom:5px}
+.rg{display:inline-block;font-family:sans-serif;font-size:10px;letter-spacing:2px;padding:4px 12px;border:1px solid rgba(200,168,75,.28);color:#C8A84B;border-radius:20px;background:rgba(200,168,75,.08);margin-bottom:14px}
+.rd{font-size:14px;color:#EDE5D8;line-height:1.7;margin-bottom:12px}
+.rw{font-style:italic;color:#E8CC60;font-size:13px;border-top:1px solid rgba(200,168,75,.2);padding-top:12px;line-height:1.6;display:block}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.pill{background:rgba(255,255,255,.03);border:1px solid rgba(200,168,75,.12);border-radius:10px;padding:10px 8px;text-align:center}
+.pi{font-size:18px;display:block;margin-bottom:3px}
+.pl2{font-family:sans-serif;font-size:9px;letter-spacing:2px;color:#A0B0C0;text-transform:uppercase;display:block;margin-bottom:2px}
+.pv{font-size:13px;font-weight:700;color:#EDE5D8;display:block;font-family:Georgia,serif}
+.sss{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.sc{background:rgba(255,255,255,.03);border-radius:11px;overflow:hidden}
+.sh{padding:9px 13px 5px;font-size:14px;font-weight:700;display:block;font-family:Georgia,serif}
+.sh.s{color:#2ABCAA}.sh.h{color:#C06080}
+.si{padding:5px 13px;border-top:1px solid rgba(255,255,255,.04);font-size:12px;color:#EDE5D8;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
+.sd{flex-shrink:0;margin-top:4px;width:5px;height:5px;border-radius:50%;display:inline-block}
+.gt{font-size:16px;font-weight:700;color:#F5EFE8;margin-bottom:8px;text-align:center;font-family:Georgia,serif;display:block}
+.gr{display:flex;align-items:flex-start;gap:9px;background:rgba(255,255,255,.03);border:1px solid rgba(200,168,75,.08);border-radius:10px;padding:11px;margin-bottom:7px;position:relative;overflow:hidden}
+.gr.hl{background:rgba(200,168,75,.08);border-color:rgba(200,168,75,.3)}
+.gr.hl::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
+.gr[data-g="NT"].hl::before{background:#2ABCAA}
+.gr[data-g="NF"].hl::before{background:#9060C8}
+.gr[data-g="SJ"].hl::before{background:#D09030}
+.gr[data-g="SP"].hl::before{background:#C06080}
+.gi{font-size:20px;flex-shrink:0}
+.gn{font-size:13px;font-weight:700;color:#F5EFE8;display:block;font-family:Georgia,serif}
+.gty{font-family:sans-serif;font-size:8px;letter-spacing:1px;color:#C8A84B;margin:2px 0 3px;display:block}
+.gd{font-size:12px;color:#A0B0C0;font-style:italic;margin:0}
+.gr.hl .gd{color:#EDE5D8}
+.av{background:rgba(200,168,75,.08);border:1px solid rgba(200,168,75,.25);border-left:3px solid #C8A84B;border-radius:10px;padding:12px 11px;margin-bottom:14px}
+.avt{font-family:sans-serif;font-size:9px;letter-spacing:3px;color:#C8A84B;text-transform:uppercase;display:block;margin-bottom:5px}
+.avx{font-size:12px;color:#EDE5D8;line-height:1.6;font-style:italic;margin:0}
+.shr{display:flex;gap:8px;margin-bottom:8px}
+.sb{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:12px 6px;border-radius:10px;border:none;cursor:pointer;font-family:sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;-webkit-appearance:none}
+.sb:active{opacity:.8}
+.swa{background:#25D366;color:#fff}
+.scp{background:rgba(200,168,75,.15);color:#E8CC60;border:1px solid rgba(200,168,75,.28)}
+.ft{text-align:center;padding:14px 0 0;font-family:sans-serif;font-size:10px;letter-spacing:2px;color:rgba(168,180,196,.3);text-transform:uppercase;border-top:1px solid rgba(200,168,75,.06);margin-top:12px}
+.ft b{color:#C8A84B;font-weight:normal}
+#tz{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(18px);background:rgba(8,8,24,.97);border:1px solid rgba(200,168,75,.28);border-radius:20px;padding:8px 16px;font-family:sans-serif;font-size:11px;color:#E8CC60;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:9999}
+#tz.on{opacity:1;transform:translateX(-50%) translateY(0)}</style>
+</head>
+<body>
+<div id="tz"></div>
+<div id="p0">
+  <p style="font-family:sans-serif;font-size:11px;letter-spacing:5px;color:#C8A84B;text-transform:uppercase;margin-bottom:12px">Canal Burro Esforcado</p>
+  <span class="lvl">NIVEL 2 — INTERMEDIARIO</span>
+  <h1 style="margin-top:14px">O Mapa do<br><em>Autoconhecimento</em></h1>
+  <div class="rule"></div>
+  <p class="sub">10 perguntas em 4 dimensoes para um resultado mais preciso.</p>
+  <p class="cite">"Conhece-te a ti mesmo e conheceras o universo e os deuses."<br>&#8212; Socrates</p>
+  <div class="tags">
+    <span class="tag">10 Perguntas</span>
+    <span class="tag">16 Perfis</span>
+    <span class="tag">5-7 Minutos</span>
+  </div>
+  <button id="b0">Descobrir Minha Personalidade</button>
+</div>
+<div id="p1" style="display:none">
+  <div class="sticky">
+    <div class="row"><span class="lab" id="PL">Pergunta 1 de N</span><span class="cod" id="PT"></span></div>
+    <div class="bar"><div class="fill" id="PF" style="width:0%"></div></div>
+    <div class="dots" id="DOTS"><div class="dot" id="D0">1</div><div class="dot" id="D1">2</div><div class="dot" id="D2">3</div><div class="dot" id="D3">4</div><div class="dot" id="D4">5</div><div class="dot" id="D5">6</div><div class="dot" id="D6">7</div><div class="dot" id="D7">8</div><div class="dot" id="D8">9</div><div class="dot" id="D9">10</div></div>
+  </div>
+  <div class="qw" id="QB"></div>
+  <div class="qbot"><button id="NB" disabled>Proxima Pergunta &#8594;</button></div>
+</div>
+<div id="p2" style="display:none">
+  <div class="tyc">
+    <span class="re">Sua Personalidade</span>
+    <div class="rc" id="RC">?</div>
+    <span class="rn" id="RN"></span>
+    <span class="rg" id="RG"></span>
+    <p class="rd" id="RD"></p>
+    <span class="rw" id="RW"></span>
+  </div>
+  <div class="pills" id="DP"></div>
+  <div class="sss" id="SS"></div>
+  <div style="margin-bottom:12px">
+    <span class="gt">Os 4 Grupos de Caminhada</span>
+    <div class="gr" data-g="NT" id="GNT"><span class="gi">&#128301;</span><div><span class="gn">Analistas</span><span class="gty">INTJ INTP ENTJ ENTP</span><p class="gd">Sabedoria Logica — estrategia, curiosidade e o porque das coisas</p></div></div>
+    <div class="gr" data-g="NF" id="GNF"><span class="gi">&#127807;</span><div><span class="gn">Diplomatas</span><span class="gty">INFJ INFP ENFJ ENFP</span><p class="gd">Sabedoria da Alma — proposito, empatia e valores profundos</p></div></div>
+    <div class="gr" data-g="SJ" id="GSJ"><span class="gi">&#128306;</span><div><span class="gn">Sentinelas</span><span class="gty">ISTJ ISFJ ESTJ ESFJ</span><p class="gd">Sabedoria do Dever — ordem, disciplina e responsabilidade</p></div></div>
+    <div class="gr" data-g="SP" id="GSP"><span class="gi">&#9889;</span><div><span class="gn">Exploradores</span><span class="gty">ISTP ISFP ESTP ESFP</span><p class="gd">Sabedoria da Acao — coragem, presenca e aprender fazendo</p></div></div>
+  </div>
+  <div class="av">
+    <span class="avt">Aviso do Burro Esforcado</span>
+    <p class="avx">Este e um mapa, nao uma caixa. Nenhum ser humano cabe inteiro em quatro letras. Use o resultado como ponto de partida — nao como definicao. Devagar e sempre.</p>
+  </div>
+  <div class="shr">
+    <button class="sb swa" id="BWA">WhatsApp</button>
+    <button class="sb scp" id="BCP">Copiar</button>
+  </div>
+  <button class="ghost" id="BRE">&#8617; Refazer o Teste</button>
+  <div class="ft"><b>Canal Burro Esforcado</b> &middot; Em Busca da Sabedoria</div>
+</div>
+<script>
+var Q=[
+  {dim:"EI",ax:"Energia,
+  {dim:"EI",ax:"Energia,
+  {dim:"EI",ax:"Energia,
+  {dim:"SN",ax:"Percepcao,
+  {dim:"SN",ax:"Percepcao,
+  {dim:"SN",ax:"Percepcao,
+  {dim:"TF",ax:"Decisao,
+  {dim:"TF",ax:"Decisao,
+  {dim:"JP",ax:"Estilo de Vida,
+  {dim:"JP",ax:"Estilo de Vida
+];
+var P={
+  INTJ:{nm:"O Arquiteto",g:"NT",gn:"Analistas",ds:"Estrategista visionario e independente. Ve o mundo como um sistema de possibilidades a otimizar, combinando imaginacao criativa com determinacao implacavel.",wi:"Sua sabedoria nasce na solidao da reflexao profunda. O desafio e aprender a confiar nas pessoas e abrir espaco para o emocional — a logica sem conexao humana nao chega tao longe.",st:["Pensamento estrategico de longo prazo","Autodisciplina e determinacao","Capacidade de transformar visao em execucao"],sh:["Pode ser excessivamente critico e exigente","Tende ao isolamento intelectual","Dificuldade em aceitar emocoes como dados validos"]},
+  INTP:{nm:"O Logico",g:"NT",gn:"Analistas",ds:"Pensador inovador com sede insaciavel de conhecimento. Busca padroes e principios ocultos em tudo que observa, carregando visoes transformadoras.",wi:"Sua riqueza esta nas ideias que outros nao enxergam. O maior desafio e trazer essas ideias para o chao da vida real — uma acao concreta vale mais que mil teorias perfeitas.",st:["Raciocinio analitico profundo","Pensamento original e independente","Humildade intelectual genuina"],sh:["Procrastinacao cronica por busca da perfeicao","Paralisia pela analise excessiva","Dificuldade de concluir o que comeca"]},
+  ENTJ:{nm:"O Comandante",g:"NT",gn:"Analistas",ds:"Lider nato, ousado e decisivo. Enxerga oportunidades onde outros veem obstaculos e transforma visoes em planos concretos com energia implacavel.",wi:"Sua forca esta no comando e na execucao. A sabedoria mais profunda e aprender quando liderar com autoridade — e quando servir com humildade.",st:["Visao estrategica aliada a capacidade de execucao","Confianca e clareza sob pressao","Habilidade rara de mobilizar equipes"],sh:["Pode atropelar sentimentos sem perceber","Impaciencia com limitacoes alheias","Tendencia ao workaholismo excessivo"]},
+  ENTP:{nm:"O Inovador",g:"NT",gn:"Analistas",ds:"Pensador rapido e criativo que ama desafiar ideias estabelecidas. Prospera no debate intelectual e encontra solucoes engenhosas onde outros desistem.",wi:"Sua mente e um fogo de artificio — brilhante e explosivo. A sabedoria esta em aprender a pousar: comprometer-se com algo maior do que a proxima grande ideia.",st:["Pensamento agil com conexoes incomuns","Carisma e habilidade de comunicacao","Coragem de questionar o que todos aceitam"],sh:["Dificuldade de concluir projetos","Usa o debate para fugir da acao concreta","Tende a subestimar o poder da consistencia"]},
+  INFJ:{nm:"O Conselheiro",g:"NF",gn:"Diplomatas",ds:"O tipo mais raro. Idealista com visao profunda da natureza humana, guiado por conviccoes inabalavels. Sente a dor do mundo e dedica sua vida a torna-lo melhor.",wi:"Voce carrega o peso do mundo no silencio do seu interior. Aprenda a cuidar de si mesmo com o mesmo amor e cuidado que oferece aos outros — voce nao pode dar o que nao tem.",st:["Intuicao profunda sobre pessoas e situacoes","Empatia genuina com integridade intacta","Comprometimento inabalavel com proposito"],sh:["Esgotamento emocional pelo excesso de doacao","Grande dificuldade de estabelecer limites","Perfeccionismo que paralisa a acao"]},
+  INFP:{nm:"O Mediador",g:"NF",gn:"Diplomatas",ds:"Sonhador poetico guiado por valores profundos. Busca sentido em tudo e enxerga o potencial oculto nas pessoas, comprometido com a autenticidade acima de tudo.",wi:"Sua riqueza esta nos valores que ninguem pode comprar. O desafio e transformar esse mundo interior rico em presenca real no mundo — sua voz e necessaria.",st:["Autenticidade e profundidade emocional raras","Empatia criativa que cura e inspira","Comprometimento intenso com valores pessoais"],sh:["Hipersensibilidade excessiva as criticas","Idealismo que pode paralisar a acao","Procrastinacao por medo de nao estar a altura"]},
+  ENFJ:{nm:"O Protagonista",g:"NF",gn:"Diplomatas",ds:"Lider carismatico e genuinamente altruista. Encontra realizacao profunda em ajudar outros a crescerem, enxergando o melhor em cada pessoa.",wi:"Voce ilumina os outros com maestria. Mas lembre-se: sua propria chama precisa ser alimentada para continuar brilhando — cuidar de si nao e egoismo, e sabedoria.",st:["Lideranca baseada em valores autenticos","Empatia que inspira e mobiliza pessoas","Comunicacao poderosa e autentica"],sh:["Negligencia cronica as proprias necessidades","Hipersensibilidade a desaprovacao","Assume responsabilidade alem do que pode carregar"]},
+  ENFP:{nm:"O Entusiasta",g:"NF",gn:"Diplomatas",ds:"Espirito livre e criativo, transbordando entusiasmo e imaginacao. Ve conexoes entre pessoas e ideias que outros nao percebem, inspirando os que estao ao redor.",wi:"Sua alegria e sua curiosidade sao dons genuinos e raros. A sabedoria esta em canalizar essa energia com foco — a borboleta que pousa transforma; a que so voa nunca termina nada.",st:["Criatividade e originalidade fora do comum","Entusiasmo genuinamente contagiante","Adaptabilidade emocional e abertura ao novo"],sh:["Grande dificuldade de manter foco ate o fim","Sensibilidade excessiva a rejeicao","Fuga de responsabilidades dificeis ou rotineiras"]},
+  ISTJ:{nm:"O Inspetor",g:"SJ",gn:"Sentinelas",ds:"A pedra angular de qualquer estrutura. Responsavel, confiavel e meticuloso, honra seus compromissos com rigor e acredita que o dever e a mais nobre forma de amor.",wi:"Sua confiabilidade e seu rigor sao um tesouro raro neste mundo. A sabedoria esta em aprender a abracar a mudanca — o mundo nao para, e voce tem o potencial de lidera-lo.",st:["Confiabilidade e integridade absolutamente inabalavels","Atencao precisa a detalhes que outros ignoram","Disciplina e comprometimento exemplares"],sh:["Resistencia excessiva a mudancas necessarias","Rigidez quando as regras precisariam ceder","Dificuldade em expressar vulnerabilidade"]},
+  ISFJ:{nm:"O Defensor",g:"SJ",gn:"Sentinelas",ds:"Protetor dedicado e profundamente atencioso. Cuida com uma devocao silenciosa que raramente pede reconhecimento, construindo mundos seguros para quem ama.",wi:"Seu cuidado silencioso constroi mais do que voce imagina. Aprenda a pedir ajuda — aceitar amor e cuidado de volta tambem e um ato de sabedoria e forca.",st:["Cuidado genuino com memoria afetiva excepcional","Confiabilidade e lealdade que sustentam relacionamentos","Cria ambientes seguros e acolhedores com consistencia"],sh:["Grande dificuldade de estabelecer limites saudaveis","Acumula ressentimentos sem expressa-los","Suprime as proprias necessidades ate o esgotamento"]},
+  ESTJ:{nm:"O Supervisor",g:"SJ",gn:"Sentinelas",ds:"Organizador excelente, direto e comprometido com a ordem. Lidera com firmeza baseada em principios claros e e o primeiro a colocar a mao na massa.",wi:"Sua forca esta na estrutura solida que voce constroi. A sabedoria mais profunda e saber quando as regras precisam ser questionadas — ate estruturas precisam evoluir.",st:["Capacidade organizacional e lideranca pratica","Clareza e objetividade que geram confianca","Dedicacao inabalavel ao dever e ao compromisso"],sh:["Pode ser excessivamente rigido e inflexivel","Dificuldade em aceitar abordagens diferentes das suas","Tende a suprimir emocoes por acha-las improdutivas"]},
+  ESFJ:{nm:"O Provedor",g:"SJ",gn:"Sentinelas",ds:"Cuidador generoso e sociavel que encontra realizacao em servir. Harmoniza grupos, lembra de detalhes importantes e cria ambientes onde todos se sentem bem-vindos.",wi:"Voce nutre o mundo ao redor com uma generosidade rara. A sabedoria esta em nutrir tambem seus proprios sonhos e necessidades — sem culpa e sem pedir permissao.",st:["Generosidade e calor humano genuinamente autenticos","Habilidade excepcional de unir e harmonizar grupos","Memoria social e atencao aos detalhes que encantam"],sh:["Necessidade intensa e constante de aprovacao externa","Grande dificuldade com conflitos diretos","Perde a propria identidade ao servir demais"]},
+  ISTP:{nm:"O Virtuoso",g:"SP",gn:"Exploradores",ds:"Observador calmo e analitico que adora explorar como o mundo funciona. Habilidoso com as maos e a mente, encontra solucoes inovadoras na pratica.",wi:"Voce aprende fazendo com uma maestria silenciosa que poucos alcanccam. A sabedoria vem quando voce permite que as pessoas vejam o que esta dentro de voce.",st:["Resolucao criativa de problemas praticos","Calma excepcional em situacoes de crise","Independencia e autossuficiencia genuinas"],sh:["Grande dificuldade de comunicar sentimentos","Pode parecer frio ou distante sem querer","Tendencia ao isolamento quando esta em dificuldade"]},
+  ISFP:{nm:"O Aventureiro",g:"SP",gn:"Exploradores",ds:"Artista quieto e profundamente sensivel, com um senso estetico que captura o que palavras nao alcancam. Vive no presente com graca e autenticidade.",wi:"Sua beleza interior e absolutamente real e transformadora. A sabedoria esta em deixa-la visivel — o mundo precisa profundamente do que voce carrega dentro de si.",st:["Autenticidade estetica e emocional profundas","Presenca plena no momento que encanta","Empatia silenciosa que cura sem precisar de palavras"],sh:["Dificuldade de planejar e pensar no longo prazo","Evita conflitos ate o ponto de se prejudicar","Hipersensibilidade a criticas ao seu trabalho criativo"]},
+  ESTP:{nm:"O Empreendedor",g:"SP",gn:"Exploradores",ds:"Energico, astuto e perceptivo. Aprende com a acao e influencia os outros com carisma real. Para ele, a realidade e seu campo de jogo e laboratorio.",wi:"Sua coragem de agir e impressionante — voce vai quando outros hesitam. A sabedoria mais profunda esta em aprender a parar e sentir: nem tudo se resolve no movimento.",st:["Carisma e presenca que energizam ambientes","Decisao rapida e eficaz sob pressao real","Coragem genuina e apetite por riscos calculados"],sh:["Age antes de pensar nas consequencias","Tedio rapido em rotina e em pensamento abstrato","Pode ser insensivel ao impacto emocional sem perceber"]},
+  ESFP:{nm:"O Animador",g:"SP",gn:"Exploradores",ds:"Espontaneo, energetico e generoso. Ama a vida com intensidade e tem o dom de transformar qualquer momento comum em uma celebracao especial.",wi:"Sua alegria e genuinamente transformadora — voce ilumina os ambientes que frequenta. Os momentos quietos tambem guardam beleza profunda — eles guardam sua profundidade.",st:["Entusiasmo e alegria genuinamente contagiantes","Generosidade espontanea que toca coracoes","Habilidade de viver o presente com plenitude total"],sh:["Grande dificuldade de planejar o longo prazo","Tende a evitar assuntos serios pela leveza","Dispersao e falta de foco sustentado em projetos"]}
+};
+
+var ans=[];
+var cur=0;
+var rc="";
+var scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+
+function pg(n){
+  document.getElementById("p0").style.display=n===0?"flex":"none";
+  document.getElementById("p1").style.display=n===1?"flex":"none";
+  document.getElementById("p2").style.display=n===2?"block":"none";
+  window.scrollTo(0,0);
+}
+
+function startQ(){
+  ans=new Array(Q.length).fill(null);
+  cur=0;rc="";
+  scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+  for(var i=0;i<Q.length;i++){var d=document.getElementById("D"+i);if(d){d.className="dot";d.innerHTML=(i+1);}}
+  document.getElementById("NB").disabled=true;
+  document.getElementById("NB").innerHTML="Proxima Pergunta &#8594;";
+  document.getElementById("PF").style.width="0%";
+  document.getElementById("PT").innerHTML="";
+  drawQ(0);pg(1);
+}
+
+function drawQ(i){
+  var q=Q[i];
+  var h="<div class="card"+(ans[i]!==null?" ans":"")+"" id="QC">";
+  h+="<div class="qh"><div class="qr">";
+  h+="<span class="qn">"+(i+1)+"</span>";
+  h+="<span class="qax">"+q.dim.slice(0,1)+" ou "+q.dim.slice(1)+" — "+q.ax+"</span>";
+  h+="<span class="qbd" id="QBDG">"+(ans[i]!==null?ans[i].s:q.dim.slice(0,1)+"/"+q.dim.slice(1))+"</span>";
+  h+="</div><div class="qt">"+q.q+"</div></div>";
+  h+="<div class="opts">";
+  h+="<div class="opt"+(ans[i]===q.a?" sel":"")+"" id="OA" onclick="pick("+i+",0)"><span class="otg">"+q.a.t+"</span><span class="ott">"+q.a.ti+"</span><p class="odd">"+q.a.d+"</p></div>";
+  h+="<div class="opt"+(ans[i]===q.b?" sel":"")+"" id="OB" onclick="pick("+i+",1)"><span class="otg">"+q.b.t+"</span><span class="ott">"+q.b.ti+"</span><p class="odd">"+q.b.d+"</p></div>";
+  h+="</div></div>";
+  document.getElementById("QB").innerHTML=h;
+  upd(i);
+}
+
+function pick(i,choice){
+  var q=Q[i];
+  var chosen=choice===0?q.a:q.b;
+  ans[i]=chosen;
+  var c=document.getElementById("QC");if(c)c.className="card ans";
+  var b=document.getElementById("QBDG");
+  if(b){b.innerHTML=chosen.s;b.style.color="#E8CC60";b.style.borderColor="rgba(200,168,75,.28)";b.style.background="rgba(200,168,75,.1)";}
+  var oa=document.getElementById("OA");var ob=document.getElementById("OB");
+  if(oa)oa.className="opt"+(choice===0?" sel":"");
+  if(ob)ob.className="opt"+(choice===1?" sel":"");
+  var dt=document.getElementById("D"+i);if(dt){dt.className="dot ok";dt.innerHTML=(i+1);}
+  document.getElementById("NB").disabled=false;
+  document.getElementById("NB").innerHTML=i<Q.length-1?"Proxima Pergunta &#8594;":"&#10024; Ver Meu Resultado";
+  upd(i);
+}
+
+function upd(i){
+  document.getElementById("PL").innerHTML="Pergunta "+(i+1)+" de "+Q.length;
+  document.getElementById("PF").style.width=((i/Q.length)*100)+"%";
+}
+
+function nxt(){
+  if(ans[cur]===null)return;
+  cur++;if(cur>=Q.length){res();return;}
+  document.getElementById("NB").disabled=true;
+  document.getElementById("NB").innerHTML="Proxima Pergunta &#8594;";
+  drawQ(cur);
+  document.getElementById("p1").scrollTop=0;
+}
+
+function res(){
+  scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+  for(var i=0;i<ans.length;i++){if(ans[i])scores[ans[i].s]++;}
+  var code=(scores.E>=scores.I?"E":"I")+(scores.S>=scores.N?"S":"N")+(scores.T>=scores.F?"T":"F")+(scores.J>=scores.P?"J":"P");
+  rc=code;var p=P[code];if(!p)return;
+  document.getElementById("RC").innerHTML=code;
+  document.getElementById("RN").innerHTML=p.nm;
+  document.getElementById("RG").innerHTML="Grupo dos "+p.gn+" ("+p.g+")";
+  document.getElementById("RD").innerHTML=p.ds;
+  document.getElementById("RW").innerHTML="&#10022; "+p.wi;
+  var dn={E:"Extrovertido",I:"Introvertido",S:"Observador",N:"Intuitivo",T:"Racional",F:"Sentimental",J:"Planejador",P:"Adaptavel"};
+  var di=["&#9889;","&#128065;","&#9878;","&#128197;"];
+  var dl=["Energia","Percepcao","Decisao","Estilo"];
+  var dk=[["E","I"],["S","N"],["T","F"],["J","P"]];
+  var ph="";
+  for(var i=0;i<4;i++){
+    var l=dk[i][0];var r=dk[i][1];
+    var ls=scores[l];var rs=scores[r];
+    var tot=ls+rs;var pct=tot>0?Math.round(ls/tot*100):50;
+    ph+="<div class="pill"><span class="pi">"+di[i]+"</span><span class="pl2">"+dl[i]+"</span><span class="pv">"+(scores[l]>=scores[r]?l:r)+" — "+(scores[l]>=scores[r]?dn[l]:dn[r])+"</span></div>";
+  }
+  document.getElementById("DP").innerHTML=ph;
+  var h="<div class="sc"><span class="sh s">Pontos Fortes</span>";
+  for(var i=0;i<p.st.length;i++)h+="<div class="si"><span class="sd" style="background:#2ABCAA"></span>"+p.st[i]+"</div>";
+  h+="</div><div class="sc"><span class="sh h">Sombras a Conhecer</span>";
+  for(var i=0;i<p.sh.length;i++)h+="<div class="si"><span class="sd" style="background:#C06080"></span>"+p.sh[i]+"</div>";
+  h+="</div>";
+  document.getElementById("SS").innerHTML=h;
+  var gs=["NT","NF","SJ","SP"];
+  for(var i=0;i<gs.length;i++){var el=document.getElementById("G"+gs[i]);if(el)el.className="gr"+(gs[i]===p.g?" hl":"");}
+  document.getElementById("PF").style.width="100%";
+  document.getElementById("PL").innerHTML="Concluido!";
+  document.getElementById("PT").innerHTML=code;
+  pg(2);
+}
+
+function waShare(){
+  if(!rc)return;var p=P[rc];
+  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/";
+  var t="Descobri minha personalidade! Tipo: "+rc+" — "+p.nm+". "+p.wi+" Faca o teste: "+url+" #BurroEsforcado";
+  window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");
+}
+
+function cpResult(){
+  if(!rc)return;var p=P[rc];
+  var url="https://burrinhoesforcado.github.io/burro-esforcado-em-busca-da-sabedoria-personalidades/";
+  var t="Canal Burro Esforcado — Tipo: "+rc+" — "+p.nm+". "+p.wi+" Link: "+url;
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){tz("Copiado!");});}
+  else{var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0;top:0;left:0";document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand("copy");tz("Copiado!");}catch(e){}document.body.removeChild(ta);}
+}
+
+function tz(m){var t=document.getElementById("tz");t.innerHTML=m;t.className="on";setTimeout(function(){t.className="";},2200);}
+
+document.getElementById("b0").addEventListener("click",startQ);
+document.getElementById("NB").addEventListener("click",nxt);
+document.getElementById("BWA").addEventListener("click",waShare);
+document.getElementById("BCP").addEventListener("click",cpResult);
+document.getElementById("BRE").addEventListener("click",function(){ans=[];cur=0;rc="";scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};pg(0);});
+
+</script>
+</body>
+</html>
